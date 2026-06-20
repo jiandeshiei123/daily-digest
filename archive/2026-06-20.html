@@ -1,468 +1,183 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>每日简报 · 2026年06月20日</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #f7f6f3;
-      --surface: #ffffff;
-      --border: #e8e5df;
-      --accent: #2d6a4f;
-      --accent-light: #e8f5ee;
-      --text-primary: #1a1a1a;
-      --text-secondary: #555;
-      --text-muted: #888;
-      --tech: #1d4ed8;
-      --tech-bg: #eff6ff;
-      --politics: #7c3aed;
-      --politics-bg: #f5f3ff;
-      --economy: #b45309;
-      --economy-bg: #fffbeb;
-      --science: #0f766e;
-      --science-bg: #f0fdfa;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text-primary);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .container {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 0 20px 60px;
-    }
-
-    /* Header */
-    .header {
-      padding: 40px 0 28px;
-      border-bottom: 2px solid var(--border);
-      margin-bottom: 32px;
-    }
-
-    .header-meta {
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .header-title {
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--text-primary);
-      letter-spacing: -0.5px;
-      margin-bottom: 6px;
-    }
-
-    .header-date {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-    }
-
-    .lede {
-      background: var(--accent-light);
-      border-left: 4px solid var(--accent);
-      border-radius: 0 8px 8px 0;
-      padding: 14px 18px;
-      font-size: 15px;
-      color: #1a3d2b;
-      font-weight: 500;
-      line-height: 1.6;
-    }
-
-    /* Section */
-    .section {
-      margin-bottom: 40px;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 1.5px solid var(--border);
-    }
-
-    .section-icon {
-      font-size: 22px;
-      line-height: 1;
-    }
-
-    .section-title {
-      font-size: 17px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-
-    .section-title.tech { color: var(--tech); }
-    .section-title.politics { color: var(--politics); }
-    .section-title.economy { color: var(--economy); }
-    .section-title.science { color: var(--science); }
-
-    /* News Card */
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px 22px;
-      margin-bottom: 16px;
-      transition: box-shadow 0.2s;
-    }
-
-    .card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
-
-    .card-headline {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 8px;
-      line-height: 1.4;
-    }
-
-    .card-facts {
-      font-size: 14px;
-      color: var(--text-secondary);
-      margin-bottom: 12px;
-      line-height: 1.65;
-    }
-
-    .insight {
-      border-radius: 8px;
-      padding: 12px 16px;
-      font-size: 14px;
-      line-height: 1.65;
-    }
-
-    .insight-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-
-    .tech .insight { background: var(--tech-bg); border-left: 3px solid var(--tech); }
-    .tech .insight-label { color: var(--tech); }
-    .politics .insight { background: var(--politics-bg); border-left: 3px solid var(--politics); }
-    .politics .insight-label { color: var(--politics); }
-    .economy .insight { background: var(--economy-bg); border-left: 3px solid var(--economy); }
-    .economy .insight-label { color: var(--economy); }
-    .science .insight { background: var(--science-bg); border-left: 3px solid var(--science); }
-    .science .insight-label { color: var(--science); }
-
-    .source-tag {
-      display: inline-block;
-      font-size: 11px;
-      color: var(--text-muted);
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 2px 7px;
-      margin-top: 10px;
-      text-decoration: none;
-    }
-
-    .source-tag:hover { color: var(--accent); border-color: var(--accent); }
-
-    /* Book Section */
-    .book-section {
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-      border-radius: 16px;
-      padding: 28px 26px;
-      margin-bottom: 36px;
-      color: #fff;
-    }
-
-    .book-header {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #a8d8c4;
-      margin-bottom: 14px;
-    }
-
-    .book-title {
-      font-size: 20px;
-      font-weight: 800;
-      margin-bottom: 4px;
-      line-height: 1.3;
-    }
-
-    .book-author {
-      font-size: 13px;
-      color: #9ca3c8;
-      margin-bottom: 14px;
-    }
-
-    .book-desc {
-      font-size: 14px;
-      color: #d1d5e8;
-      line-height: 1.7;
-    }
-
-    /* Sources */
-    .sources-section {
-      margin-bottom: 28px;
-    }
-
-    .sources-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 10px;
-    }
-
-    .sources-list {
-      list-style: none;
-    }
-
-    .sources-list li {
-      margin-bottom: 6px;
-    }
-
-    .sources-list a {
-      font-size: 13px;
-      color: var(--text-secondary);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-    }
-
-    .sources-list a:hover {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-    }
-
-    /* Archive link */
-    .archive-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 14px;
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-      border: 1.5px solid var(--accent);
-      border-radius: 8px;
-      padding: 8px 16px;
-      transition: background 0.2s;
-    }
-
-    .archive-link:hover { background: var(--accent-light); }
-
-    /* Footer */
-    .footer {
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .footer-note {
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    @media (max-width: 480px) {
-      .header-title { font-size: 22px; }
-      .card { padding: 16px 16px; }
-      .book-section { padding: 22px 18px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日简报 · 2026年06月20日</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f7f5f0; --card: #ffffff; --border: #e8e4dc; --accent: #3d6b4f;
+    --accent-light: #eef4f0; --text-primary: #1a1a1a; --text-secondary: #555;
+    --text-muted: #888; --shadow: 0 1px 3px rgba(0,0,0,.06); --shadow-md: 0 4px 12px rgba(0,0,0,.08);
+  }
+  body { font-family: -apple-system,"PingFang SC","Microsoft YaHei",sans-serif; background: var(--bg); color: var(--text-primary); line-height: 1.75; font-size: 16px; }
+  .container { max-width: 680px; margin: 0 auto; padding: 0 20px 60px; }
+  .site-header { background: var(--accent); color: white; margin-bottom: 32px; }
+  .site-header .inner { max-width: 680px; margin: 0 auto; padding: 36px 20px 30px; }
+  .site-name { font-size: 12px; letter-spacing: .15em; text-transform: uppercase; opacity: .75; margin-bottom: 8px; }
+  .date-display { font-size: 28px; font-weight: 700; letter-spacing: -.02em; margin-bottom: 4px; }
+  .date-sub { font-size: 13px; opacity: .65; }
+  .lead-card { background: var(--card); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 32px; box-shadow: var(--shadow); }
+  .lead-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .lead-text { font-size: 15.5px; line-height: 1.7; }
+  .section { margin-bottom: 36px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid var(--border); }
+  .section-icon { font-size: 22px; }
+  .section-title { font-size: 17px; font-weight: 700; letter-spacing: -.01em; }
+  .news-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; margin-bottom: 14px; box-shadow: var(--shadow); }
+  .news-meta { display: flex; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+  .news-tag { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 2px 8px; border-radius: 4px; }
+  .tag-tech { background: #dbeafe; color: #1e40af; }
+  .tag-politics { background: #fce7f3; color: #9d174d; }
+  .tag-economy { background: #fef3c7; color: #92400e; }
+  .tag-science { background: #d1fae5; color: #065f46; }
+  .news-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; letter-spacing: -.01em; line-height: 1.4; }
+  .news-facts { font-size: 14.5px; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.65; }
+  .insight-block { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; padding: 12px 14px; font-size: 14px; color: #2d5040; line-height: 1.7; }
+  .insight-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+  .news-source { margin-top: 10px; font-size: 12px; color: var(--text-muted); }
+  .news-source a { color: var(--text-muted); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .news-source a:hover { color: var(--accent); }
+  .book-card { background: linear-gradient(135deg,#1a3a2a,#2d5040); border-radius: 12px; padding: 28px 26px; color: white; margin-bottom: 32px; box-shadow: var(--shadow-md); }
+  .book-header { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; opacity: .7; margin-bottom: 14px; }
+  .book-title { font-size: 20px; font-weight: 700; margin-bottom: 4px; line-height: 1.3; }
+  .book-author { font-size: 14px; opacity: .75; margin-bottom: 16px; }
+  .book-reason { font-size: 14.5px; line-height: 1.75; opacity: .9; border-top: 1px solid rgba(255,255,255,.15); padding-top: 14px; }
+  .sources-section { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; margin-bottom: 28px; }
+  .sources-title { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; }
+  .sources-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .sources-list li { font-size: 13px; color: var(--text-muted); }
+  .sources-list a { color: #3d6b4f; text-decoration: none; word-break: break-all; }
+  .sources-list a:hover { text-decoration: underline; }
+  .archive-link { text-align: center; padding: 20px 0 10px; }
+  .archive-link a { display: inline-block; background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 10px 24px; font-size: 14px; color: var(--text-secondary); text-decoration: none; }
+  .archive-link a:hover { background: var(--accent); color: white; border-color: var(--accent); }
+  .site-footer { text-align: center; padding: 20px 0; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 20px; }
+  @media(max-width:480px){.date-display{font-size:22px}.news-card,.book-card{padding:16px}}
+</style>
 </head>
 <body>
-  <div class="container">
-
-    <!-- Header -->
-    <header class="header">
-      <div class="header-meta">Daily Digest · 每日简报</div>
-      <h1 class="header-title">每日简报</h1>
-      <div class="header-date">2026年06月20日 &nbsp;·&nbsp; 周六</div>
-      <div class="lede">
-        今日看点：史上最大 IPO 让马斯克成为全球首位万亿富翁；AI 大模型竞赛再度易主；
-        美伊霍尔木兹协议令油价骤跌；科学家发现阿尔茨海默症全新触发机制。
-      </div>
-    </header>
-
-    <!-- 科技 -->
-    <section class="section">
-      <div class="section-header">
-        <span class="section-icon">🖥️</span>
-        <span class="section-title tech">科技</span>
-      </div>
-
-      <div class="card tech">
-        <div class="card-headline">SpaceX 上市首日暴涨 19%，马斯克成全球首位万亿美元富翁</div>
-        <div class="card-facts">
-          SpaceX 于 6 月 12 日在纳斯达克以代码 SPCX 上市，发行价 135 美元/股，融资 750 亿美元，刷新人类 IPO 历史纪录。首日收盘价达 160.95 美元，盘中一度触及 176 美元，市值逼近 2.3 万亿美元，超越苹果当时的估值。此次上市使马斯克个人净资产首度突破 1 万亿美元大关。
-        </div>
-        <div class="insight">
-          <div class="insight-label">解读</div>
-          750 亿美元的 IPO 规模是此前纪录的两倍还多——这不只是一家公司上市，更是一种信号：资本市场正在押注"私人航天"取代国家航天的未来。但别忘了，SpaceX 今年第一季度净亏损 43 亿美元，而且马斯克独掌 85% 投票权。买的不只是股票，是一票关于未来的信仰。
-        </div>
-        <a class="source-tag" href="https://www.npr.org/2026/06/12/nx-s1-5855004/stock-ai-spacex-ipo-elon-musk" target="_blank" rel="noopener">来源：NPR</a>
-      </div>
-
-      <div class="card tech">
-        <div class="card-headline">AI 大模型王座再易位：Claude Opus 4.8 登顶基准测试，超越 GPT-5.5</div>
-        <div class="card-facts">
-          Anthropic 于 5 月 28 日发布 Claude Opus 4.8，在综合基准测试中以 61.4% 的得分和 1545 Elo 分登顶 Artificial Analysis 排行榜，超越此前领跑的 OpenAI GPT-5.5（发布于 4 月 23 日）。与此同时，Google 在 I/O 大会上预告的 Gemini 3.5 Pro 即将全面上线。6 月正在成为"史上最密集的 AI 发布月"。
-        </div>
-        <div class="insight">
-          <div class="insight-label">解读</div>
-          大模型每隔几周就换一次"冠军"，这本身就说明问题：各家的技术差距正在压缩到肉眼难以分辨的程度。真正的竞争已经从"谁的模型最强"转向"谁的生态最黏、谁的调用成本最低"。对普通开发者来说，与其追榜单，不如思考哪家的 API 定价和稳定性更适合自己的场景。
-        </div>
-        <a class="source-tag" href="https://renovateqr.com/blog/ai-models-april-2026" target="_blank" rel="noopener">来源：Renovate QR / Artificial Analysis</a>
-      </div>
-    </section>
-
-    <!-- 政治/国际 -->
-    <section class="section">
-      <div class="section-header">
-        <span class="section-icon">🌍</span>
-        <span class="section-title politics">政治 / 国际</span>
-      </div>
-
-      <div class="card politics">
-        <div class="card-headline">美伊签署初步协议：霍尔木兹海峡将重新开放，60 天核谈即将启动</div>
-        <div class="card-facts">
-          美国与伊朗于 6 月 14-15 日达成初步协议，双方军事脱离接触，霍尔木兹海峡将重新向商业船只开放。特朗普宣布解除对伊朗港口的海上封锁，并称海峡将"永久免费通行"。协议要求伊朗在核问题上迈出可核查步骤，作为美方解除制裁的前提；核谈将于美方释放伊朗冻结资金后正式开启。
-        </div>
-        <div class="insight">
-          <div class="insight-label">解读</div>
-          霍尔木兹海峡承载全球约 20% 的石油贸易，它的关闭让油价飙涨、全球供应链承压近四个月。协议消息传出后，油价骤跌、股市反弹——这说明一场局部地区冲突已经让整个世界经济为之战栗。协议能否走向正式条约，关键还在于核问题谈判——而这条路从来不简单。
-        </div>
-        <a class="source-tag" href="https://www.npr.org/2026/06/15/nx-s1-5858590/us-iran-deal-updates" target="_blank" rel="noopener">来源：NPR / CNN</a>
-      </div>
-
-      <div class="card politics">
-        <div class="card-headline">乌克兰对莫斯科发动开战以来最大规模袭击</div>
-        <div class="card-facts">
-          乌克兰近期对莫斯科发动了自 2022 年俄罗斯全面入侵以来规模最大的一次攻击，动用了大批无人机和远程导弹。俄方称成功拦截大部分目标，但莫斯科郊区多处出现爆炸和火灾。此次袭击时间节点恰好在美伊停火协议达成前后，引发国际社会对乌克兰战局走向的广泛关注。
-        </div>
-        <div class="insight">
-          <div class="insight-label">解读</div>
-          打到首都门口，战略意义远大于实际破坏。乌克兰此举传递的信息是：即便战线胶着，基辅仍有能力让莫斯科感受到战争的真实存在。这种"非对称施压"同时也是谈判桌前的筹码——在国际斡旋加速的背景下，战场上的行动往往是外交上的发言。
-        </div>
-        <a class="source-tag" href="https://www.zerofox.com/intelligence/monthly-geopolitical-report-june-2026/" target="_blank" rel="noopener">来源：ZeroFox Geopolitical Report</a>
-      </div>
-    </section>
-
-    <!-- 经济/财经 -->
-    <section class="section">
-      <div class="section-header">
-        <span class="section-icon">💰</span>
-        <span class="section-title economy">经济 / 财经</span>
-      </div>
-
-      <div class="card economy">
-        <div class="card-headline">美联储新主席沃什首次会议维持利率，鹰派信号震动市场</div>
-        <div class="card-facts">
-          美联储新主席凯文·沃什主持首次利率决策会议，宣布维持联邦基金利率不变，但措辞偏鹰派，暗示若通胀压力持续，年内不排除加息。决议公布后，美国 10 年期国债收益率明显走高，科技股短暂承压。5 月零售数据强于预期是美联储保持谨慎的主要理由。
-        </div>
-        <div class="insight">
-          <div class="insight-label">解读</div>
-          沃什接替鲍威尔后，市场一直在揣摩他的风格。这次"按兵不动但口风偏紧"的操作，像是一次试探——向市场说明"我不会轻易降息"。对普通人的影响很直接：房贷、车贷利率在高位维持的时间可能比预期更长，消费信贷成本短期内难以缓解。
-        </div>
-        <a class="source-tag" href="https://blog.carnegieinvest.com/monthly-market-commentary-june-2026" target="_blank" rel="noopener">来源：Carnegie Investment / CaixaBank Research</a>
-      </div>
-
-      <div class="card economy">
-        <div class="card-headline">标普 500 季度涨幅超 16%，AI 概念股成最大引擎</div>
-        <div class="card-facts">
-          今年二季度截至目前，标普 500 指数涨幅达 16.3%，纳斯达克指数涨幅高达 25%，创近年来最强季度表现之一。驱动力高度集中：AI 芯片、云基础设施和 AI 软件公司估值持续扩张，英伟达、微软等领头羊 Q1 盈利同比增速均超 40%。市场分析师普遍警告，高估值下回调风险不容忽视。
-        </div>
-        <div class="insight">
-          <div class="insight-label">解读</div>
-          涨得越快，问题越需要问：这是基本面驱动还是情绪驱动？目前两者都有，但比例正在微妙变化——AI 真正带来的营收增长已经很可观，但股价里也隐含了过多对"未来十年"的乐观预期。对于普通投资者，这个阶段最难的不是"买什么"，而是"什么时候愿意接受平庸的回报"。
-        </div>
-        <a class="source-tag" href="https://www.caixabankresearch.com/en/publications/financial-markets-daily-report/18-june-2026" target="_blank" rel="noopener">来源：CaixaBank Research / Carnegie Invest</a>
-      </div>
-    </section>
-
-    <!-- 科学/人文 -->
-    <section class="section">
-      <div class="section-header">
-        <span class="section-icon">🔬</span>
-        <span class="section-title science">科学 / 人文</span>
-      </div>
-
-      <div class="card science">
-        <div class="card-headline">科学家发现阿尔茨海默症全新触发蛋白 GRK2，或开辟治疗新路</div>
-        <div class="card-facts">
-          《科学日报》2026 年 6 月报道：研究人员发现蛋白激酶 GRK2 的失活分子会在神经细胞内聚集成团，附着于线粒体外膜，堵塞孔道、切断细胞能量供应，同时促使淀粉样蛋白 β（Aβ）产量上升。实验中，一种靶向 GRK2 聚集的药物成功阻止了细胞内 Aβ 的积累，为阿尔茨海默症提供了全新治疗靶点。
-        </div>
-        <div class="insight">
-          <div class="insight-label">解读</div>
-          阿尔茨海默症长期被认为是"淀粉样蛋白积累导致大脑受损"，但直接清除 Aβ 的药物屡屡失败。GRK2 的发现暗示：我们可能一直在攻打症状，而非根源。如果 GRK2 是"上游开关"，那么未来的治疗可能不需要清除已形成的斑块，而是在能量危机发生前就把问题拦截——这是一个完全不同的思路。
-        </div>
-        <a class="source-tag" href="https://www.sciencedaily.com/releases/2026/06/260608035959.htm" target="_blank" rel="noopener">来源：ScienceDaily</a>
-      </div>
-
-      <div class="card science">
-        <div class="card-headline">哺乳动物的"再生能力"或未消失——只是被基因关闭了</div>
-        <div class="card-facts">
-          研究人员发现，哺乳动物重建复杂器官（如肢体、心脏）的能力，并非在进化中彻底丢失，而是被特定基因网络主动"沉默"。通过在实验动物中短暂激活相关信号通路，科学家让原本无法再生的组织展现出再生迹象。这与两栖类动物（如蝾螈）保持再生能力的机制存在深刻关联。
-        </div>
-        <div class="insight">
-          <div class="insight-label">解读</div>
-          这是一个让人兴奋但必须保持冷静的发现。"能力被关闭"意味着理论上可以被打开——但从细胞实验到临床治疗，中间隔着十年以上的研发鸿沟。真正的价值在于概念的转变：我们不再需要从零创造再生药物，而是寻找"解锁"已有潜能的钥匙，这让再生医学的可行性大大提升了。
-        </div>
-        <a class="source-tag" href="https://www.sciencedaily.com/" target="_blank" rel="noopener">来源：ScienceDaily / Science News June 2026</a>
-      </div>
-    </section>
-
-    <!-- 书籍推荐 -->
-    <div class="book-section">
-      <div class="book-header">📚 今日书籍推荐</div>
-      <div class="book-title">《即将到来的浪潮》</div>
-      <div class="book-author">The Coming Wave &nbsp;·&nbsp; Mustafa Suleyman 著</div>
-      <div class="book-desc">
-        AI 联合创始人、DeepMind 创始人之一穆斯塔法·苏莱曼写的这本书，不是在贩卖焦虑，而是在剖析一个真实困境：AI 和合成生物学正在让"极端破坏力"前所未有地民主化，而现有的社会治理结构根本没准备好。今天简报里 AI 模型军备竞赛、马斯克万亿帝国、基因再生研究的并排出现，恰好是这本书核心命题的现实注脚——技术浪潮的速度，已经远超制度演进的速度。读这本书，不为答案，而是为了想清楚"我们究竟在让什么发生"。
-      </div>
-    </div>
-
-    <!-- 来源 -->
-    <div class="sources-section">
-      <div class="sources-title">📎 主要来源</div>
-      <ul class="sources-list">
-        <li><a href="https://www.npr.org/2026/06/12/nx-s1-5855004/stock-ai-spacex-ipo-elon-musk" target="_blank" rel="noopener">NPR — SpaceX IPO makes history as largest ever</a></li>
-        <li><a href="https://techcrunch.com/2026/06/12/spacex-ipo-closes-up-19-and-delivers-the-worlds-first-trillionaire/" target="_blank" rel="noopener">TechCrunch — SpaceX IPO delivers world's first trillionaire</a></li>
-        <li><a href="https://renovateqr.com/blog/ai-models-april-2026" target="_blank" rel="noopener">AI Models Leaderboard — Claude Opus 4.8 dethrones GPT-5.5</a></li>
-        <li><a href="https://www.npr.org/2026/06/15/nx-s1-5858590/us-iran-deal-updates" target="_blank" rel="noopener">NPR — U.S. and Iran announce initial deal, Strait of Hormuz</a></li>
-        <li><a href="https://www.cnn.com/2026/06/14/world/live-news/iran-war-trump-israel" target="_blank" rel="noopener">CNN — US and Iran reach agreement including opening Strait of Hormuz</a></li>
-        <li><a href="https://www.zerofox.com/intelligence/monthly-geopolitical-report-june-2026/" target="_blank" rel="noopener">ZeroFox — Monthly Geopolitical Report: June 2026</a></li>
-        <li><a href="https://blog.carnegieinvest.com/monthly-market-commentary-june-2026" target="_blank" rel="noopener">Carnegie Investment — Monthly Market Commentary: June 2026</a></li>
-        <li><a href="https://www.caixabankresearch.com/en/publications/financial-markets-daily-report/18-june-2026" target="_blank" rel="noopener">CaixaBank Research — Financial Markets Daily Report 18 June 2026</a></li>
-        <li><a href="https://www.sciencedaily.com/releases/2026/06/260608035959.htm" target="_blank" rel="noopener">ScienceDaily — Scientists found a new Alzheimer's trigger (GRK2)</a></li>
-        <li><a href="https://www.sciencenews.org/sn-magazine/june-2026" target="_blank" rel="noopener">Science News — June 2026 Issue</a></li>
-      </ul>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <a class="archive-link" href="archive.html">📂 查看往期简报</a>
-      <span class="footer-note">由 Daily Digest Bot 自动生成 · 2026-06-20</span>
-    </footer>
-
+<header class="site-header">
+  <div class="inner">
+    <div class="site-name">每日简报 Daily Digest</div>
+    <div class="date-display">2026年06月20日</div>
+    <div class="date-sub">周六 &nbsp;·&nbsp; 精选时事 · 深度解读</div>
   </div>
+</header>
+<div class="container">
+  <div class="lead-card">
+    <div class="lead-label">今日导语</div>
+    <div class="lead-text">AI 独角兽逼近万亿估值、SpaceX 以史上最大 IPO 首日市值破两万亿，与此同时，美伊正式签署停战备忘录令霍尔木兹海峡危机降温——人类正在以比以往任何时候都快的速度改写历史的边界。</div>
+  </div>
+
+  <section class="section">
+    <div class="section-header"><span class="section-icon">💻</span><span class="section-title">科技</span></div>
+    <div class="news-card">
+      <div class="news-meta"><span class="news-tag tag-tech">AI · 融资</span></div>
+      <div class="news-title">Anthropic 完成 650 亿美元融资，估值 9650 亿超越 OpenAI，成全球最高价 AI 公司</div>
+      <div class="news-facts">Anthropic 宣布完成 H 轮融资 650 亿美元，由 Altimeter Capital、Sequoia Capital 等领投，融资后估值达 9650 亿美元，超越此前估值 8520 亿美元的 OpenAI，一跃成为全球市值最高的 AI 创业公司。公司表示本月年化营收已突破 470 亿美元，并预计今年实现首次经营盈利；IPO 计划最早于 2026 年 10 月推进。</div>
+      <div class="insight-block">
+        <div class="insight-label">解读</div>
+        AI 领域的资本竞争已到了让人眩晕的尺度——一家成立不到四年的公司，估值比大多数国家的 GDP 还高。背后是企业对"谁掌控下一代智能基础设施"的真实焦虑。更值得关注的是 Anthropic 强调"安全优先"的路线：如果有一家接近万亿估值的公司能真的把安全研究当成核心业务而非公关口号，对整个行业来说可能是件好事。
+      </div>
+      <div class="news-source">来源：<a href="https://techcrunch.com/2026/05/28/anthropic-raises-65-billion-nears-1t-valuation-ahead-of-ipo/" target="_blank">TechCrunch</a> · <a href="https://www.aljazeera.com/economy/2026/5/29/anthropic-soars-to-965bn-valuation-leapfrogging-openai" target="_blank">Al Jazeera</a></div>
+    </div>
+    <div class="news-card">
+      <div class="news-meta"><span class="news-tag tag-tech">太空 · IPO</span></div>
+      <div class="news-title">SpaceX 史上最大 IPO：融资 750 亿美元，首日涨 19%，市值突破 2 万亿</div>
+      <div class="news-facts">6 月 12 日，SpaceX 以每股 135 美元在纳斯达克（代码 SPCX）上市，融资 750 亿美元，刷新史上最大 IPO 纪录。首日收盘价 161 美元，涨幅 19%，市值瞬间超 2 万亿美元，跻身全球最大上市公司之列。值得注意的是，公司一季度净亏损 43 亿美元，但市场显然并不在乎盈亏数字。</div>
+      <div class="insight-block">
+        <div class="insight-label">解读</div>
+        马斯克把 SpaceX 带上市，这件事本身就是一个信号：火箭公司不再只是"烧钱的梦想"，而是华尔街眼中有实际估值依据的商业体。2 万亿市值背后对应的是 Starlink 全球卫星网络的订阅收入、星舰项目的未来潜力，还是马斯克本人的品牌溢价？华尔街内部分歧巨大，但散户热情说明一切——人们愿意为"未来"买单，即便那个未来还要很久才来。
+      </div>
+      <div class="news-source">来源：<a href="https://www.npr.org/2026/06/12/nx-s1-5855004/stock-ai-spacex-ipo-elon-musk" target="_blank">NPR</a> · <a href="https://www.cnn.com/2026/06/12/business/live-news/spacex-goes-public-ipo" target="_blank">CNN</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="section-icon">🌍</span><span class="section-title">政治 / 国际</span></div>
+    <div class="news-card">
+      <div class="news-meta"><span class="news-tag tag-politics">地缘政治</span></div>
+      <div class="news-title">特朗普与伊朗总统签署停战备忘录，霍尔木兹海峡危机进入 60 天谈判期</div>
+      <div class="news-facts">6 月 15 日，特朗普在凡尔赛宫以视频方式与伊朗总统马苏德·佩泽希齐扬共同签署谅解备忘录，协议涵盖解除美国对伊朗港口封锁、重开霍尔木兹海峡商业航运，以及开启 60 天正式核谈判三大核心条款。这是持续数月的美伊冲突以来最重要的外交突破，但海峡扫雷与具体执行细节仍存在不确定性。</div>
+      <div class="insight-block">
+        <div class="insight-label">解读</div>
+        霍尔木兹海峡承载全球约 20% 的石油贸易，封锁与重开直接牵动全球能源市场的神经。这份备忘录距真正的和平还很遥远——60 天谈判期里，核协议分歧、制裁解除时序、以色列立场，每一个都是实质性障碍。但对普通人而言，这意味着近期油价压力可能阶段性缓解，国际航运保险费率也会有所回落。凡尔赛宫的签约场景颇具象征意味：历史的大戏，总喜欢在最华丽的舞台上开幕。
+      </div>
+      <div class="news-source">来源：<a href="https://www.npr.org/2026/06/15/nx-s1-5858590/us-iran-deal-updates" target="_blank">NPR</a> · <a href="https://www.nbcnews.com/world/iran/strait-hormuz-reopen-us-lift-iran-sanctions-14-point-deal-seeking-end-rcna350513" target="_blank">NBC News</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="section-icon">📈</span><span class="section-title">经济 / 财经</span></div>
+    <div class="news-card">
+      <div class="news-meta"><span class="news-tag tag-economy">美联储 · 利率</span></div>
+      <div class="news-title">美联储新主席沃什首次会议按兵不动，市场预计年底仍可能加息；纳斯达克 Q2 涨 25%</div>
+      <div class="news-facts">美联储在新主席凯文·沃什主持的首次议息会议上决定维持利率不变。纳斯达克综合指数本季度至今累计涨幅达 25%，标普 500 五月单月涨幅 5.3%，科技与 AI 概念股持续引领市场。CME FedWatch 数据显示，市场约 70% 概率预期美联储将在 12 月加息 25 个基点，国债收益率随通胀预期走高而持续上扬。</div>
+      <div class="insight-block">
+        <div class="insight-label">解读</div>
+        股市大涨与加息预期共存，听起来矛盾，逻辑其实清晰：市场相信 AI 驱动的生产力提升能消化更高的资金成本。沃什作为新主席选择"首战不出手"，是聪明的政治动作——先观察数据，保留子弹。对普通人来说，这意味着房贷利率短期不会大幅下降，但科技股投资者继续狂欢。两种现实同时存在，恰好说明当前经济结构的分裂程度。
+      </div>
+      <div class="news-source">来源：<a href="https://blog.carnegieinvest.com/monthly-market-commentary-june-2026" target="_blank">Carnegie Invest</a> · <a href="https://www.caixabankresearch.com/en/publications/financial-markets-daily-report/18-june-2026" target="_blank">CaixaBank Research</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="section-icon">🔭</span><span class="section-title">科学 / 人文</span></div>
+    <div class="news-card">
+      <div class="news-meta"><span class="news-tag tag-science">天文 · 太空</span></div>
+      <div class="news-title">韦伯望远镜在星际彗星 3I/ATLAS 上首次探测到甲烷，揭示另一星系的"化学指纹"</div>
+      <div class="news-facts">NASA 宣布，詹姆斯·韦伯太空望远镜利用 MIRI 中红外仪器，首次在来自太阳系外的星际彗星 3I/ATLAS 上直接探测到甲烷。研究于 6 月 1 日发表于《天体物理学快报》，数据显示该彗星含有异常高浓度的二氧化碳，化学成分与太阳系内彗星截然不同，反映了另一个行星系统诞生时的早期环境条件。</div>
+      <div class="insight-block">
+        <div class="insight-label">解读</div>
+        这是人类第三次观测到来自太阳系外的访客（继 'Oumuamua 和 Borisov 之后），而这次我们终于能"闻到它的味道"了。甲烷的存在意义不凡：它告诉我们这颗彗星来自一个温度与环境和我们太阳系形成条件明显不同的地方。就像从邻居家飘来一种你从未闻过的食物香气——你无法进入那个厨房，但这股香气已经让你猜到那里用的是完全不同的食材。宇宙的多样性，可能远超我们的想象。
+      </div>
+      <div class="news-source">来源：<a href="https://science.nasa.gov/blogs/3iatlas/2026/06/01/nasas-webb-detects-methane-on-interstellar-comet-3i-atlas/" target="_blank">NASA Science</a> · <a href="https://www.sciencedaily.com/releases/2026/06/260603023116.htm" target="_blank">ScienceDaily</a></div>
+    </div>
+    <div class="news-card">
+      <div class="news-meta"><span class="news-tag tag-science">健康 · 营养</span></div>
+      <div class="news-title">超 11.2 万人研究揭示：常见食品防腐剂与高血压、心脏病风险上升显著相关</div>
+      <div class="news-facts">一项覆盖超过 11.2 万名参与者的大规模流行病学研究发现，长期食用含常见防腐剂（包括硝酸盐、苯甲酸盐等）的加工食品，与血压升高及心血管疾病风险增加之间存在显著关联，研究结果已发表于同行评审期刊，引发营养学界对超加工食品监管政策的新一轮讨论。</div>
+      <div class="insight-block">
+        <div class="insight-label">解读</div>
+        这类研究每隔一段时间就会出现，但这次样本量之大让结论更难被忽视。当然，相关性不等于因果性——吃了加工食品的人可能整体生活习惯也不太健康，研究很难完全排除混杂因素。对普通人的实用建议其实很简单：减少包装零食和腌制肉类的比例，这个结论从营养学角度来说早已不是新闻。真正值得关注的，是这项研究可能推动食品监管部门重新审视防腐剂添加标准上限。
+      </div>
+      <div class="news-source">来源：<a href="https://www.sciencedaily.com/" target="_blank">ScienceDaily</a></div>
+    </div>
+  </section>
+
+  <div class="book-card">
+    <div class="book-header">📚 今日书籍推荐</div>
+    <div class="book-title">《AI 2041：人工智能的十个未来》</div>
+    <div class="book-author">李开复 · 陈楸帆 著</div>
+    <div class="book-reason">当 Anthropic 逼近万亿估值、SpaceX 以 AI 资产打包上市，你可能会问：接下来十年，AI 究竟会以怎样的方式改变普通人的日常？这本书用十个科幻短篇故事加技术深度解析的双轨结构，把 AI 将如何渗透教育、医疗、金融、工作和亲密关系写得具体可感——不是抽象的"颠覆"，而是可以带入自己生活的真实想象。今天读科技新闻，明天读这本书，会让你对"未来已来"有更立体的感受。</div>
+  </div>
+
+  <div class="sources-section">
+    <div class="sources-title">📎 来源链接</div>
+    <ul class="sources-list">
+      <li>· <a href="https://techcrunch.com/2026/05/28/anthropic-raises-65-billion-nears-1t-valuation-ahead-of-ipo/" target="_blank">TechCrunch — Anthropic raises $65B, nears $1T valuation ahead of IPO</a></li>
+      <li>· <a href="https://www.aljazeera.com/economy/2026/5/29/anthropic-soars-to-965bn-valuation-leapfrogging-openai" target="_blank">Al Jazeera — Anthropic soars to $965bn valuation, leapfrogging OpenAI</a></li>
+      <li>· <a href="https://www.npr.org/2026/06/12/nx-s1-5855004/stock-ai-spacex-ipo-elon-musk" target="_blank">NPR — SpaceX IPO makes history as largest ever, stock gains 19%</a></li>
+      <li>· <a href="https://www.cnn.com/2026/06/12/business/live-news/spacex-goes-public-ipo" target="_blank">CNN — SpaceX shares debut after biggest IPO in history</a></li>
+      <li>· <a href="https://fortune.com/2026/06/11/spacex-ipo-largest-history-wall-street-analysts-split-valuation-debate/" target="_blank">Fortune — SpaceX's record IPO has Wall Street torn</a></li>
+      <li>· <a href="https://www.npr.org/2026/06/15/nx-s1-5858590/us-iran-deal-updates" target="_blank">NPR — U.S. and Iran announce initial deal to end the war</a></li>
+      <li>· <a href="https://www.nbcnews.com/world/iran/strait-hormuz-reopen-us-lift-iran-sanctions-14-point-deal-seeking-end-rcna350513" target="_blank">NBC News — Trump and Iran president sign initial deal, open Strait of Hormuz</a></li>
+      <li>· <a href="https://blog.carnegieinvest.com/monthly-market-commentary-june-2026" target="_blank">Carnegie Invest — Monthly Market Commentary June 2026</a></li>
+      <li>· <a href="https://www.caixabankresearch.com/en/publications/financial-markets-daily-report/18-june-2026" target="_blank">CaixaBank Research — Financial Markets Daily Report 18 June 2026</a></li>
+      <li>· <a href="https://science.nasa.gov/blogs/3iatlas/2026/06/01/nasas-webb-detects-methane-on-interstellar-comet-3i-atlas/" target="_blank">NASA Science — Webb Detects Methane on Interstellar Comet 3I/ATLAS</a></li>
+      <li>· <a href="https://www.sciencedaily.com/releases/2026/06/260603023116.htm" target="_blank">ScienceDaily — Webb detects methane and strange chemistry on 3I/ATLAS</a></li>
+      <li>· <a href="https://www.sciencedaily.com/" target="_blank">ScienceDaily — Food preservatives linked to cardiovascular disease risk</a></li>
+    </ul>
+  </div>
+
+  <div class="archive-link">
+    <a href="../archive.html">📂 查看往期简报</a>
+  </div>
+</div>
+<footer class="site-footer">
+  <div style="max-width:680px;margin:0 auto;padding:0 20px;">每日简报 Daily Digest &nbsp;·&nbsp; 内容基于真实新闻来源 &nbsp;·&nbsp; 2026</div>
+</footer>
 </body>
 </html>
