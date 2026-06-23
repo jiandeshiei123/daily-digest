@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>每日简报 · 2026年06月22日</title>
+<title>每日简报 · 2026年06月23日</title>
 <style>
   :root {
     --bg: #f7f6f2;
@@ -34,8 +34,6 @@
     padding: 24px 16px 60px;
   }
   .container { max-width: 680px; margin: 0 auto; }
-
-  /* Header */
   .header {
     text-align: center;
     padding: 36px 0 28px;
@@ -68,8 +66,6 @@
     border-radius: 0 8px 8px 0;
     text-align: left;
   }
-
-  /* Section */
   .section { margin-bottom: 14px; }
   .section-header {
     display: flex;
@@ -86,8 +82,6 @@
     color: var(--text);
     letter-spacing: 0.01em;
   }
-
-  /* Card */
   .card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -109,7 +103,6 @@
   .tag-politics { background: var(--tag-politics-bg); color: var(--tag-politics-text); }
   .tag-economy { background: var(--tag-economy-bg); color: var(--tag-economy-text); }
   .tag-science { background: var(--tag-science-bg); color: var(--tag-science-text); }
-
   .card h3 {
     font-size: 17px;
     font-weight: 700;
@@ -145,13 +138,8 @@
     font-size: 12px;
     color: var(--muted);
   }
-  .card .source a {
-    color: var(--accent);
-    text-decoration: none;
-  }
+  .card .source a { color: var(--accent); text-decoration: none; }
   .card .source a:hover { text-decoration: underline; }
-
-  /* Book section */
   .book-section {
     background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
     border-radius: 16px;
@@ -173,18 +161,8 @@
     margin-bottom: 5px;
     line-height: 1.35;
   }
-  .book-author {
-    font-size: 13px;
-    opacity: 0.78;
-    margin-bottom: 14px;
-  }
-  .book-section p {
-    font-size: 14.5px;
-    line-height: 1.72;
-    opacity: 0.92;
-  }
-
-  /* Sources */
+  .book-author { font-size: 13px; opacity: 0.78; margin-bottom: 14px; }
+  .book-section p { font-size: 14.5px; line-height: 1.72; opacity: 0.92; }
   .sources {
     margin-top: 32px;
     padding: 20px 24px;
@@ -208,18 +186,9 @@
     color: var(--muted);
   }
   .sources li:last-child { border-bottom: none; }
-  .sources a {
-    color: var(--accent);
-    text-decoration: none;
-    word-break: break-all;
-  }
+  .sources a { color: var(--accent); text-decoration: none; word-break: break-all; }
   .sources a:hover { text-decoration: underline; }
-
-  /* Archive link */
-  .archive-link {
-    text-align: center;
-    margin-top: 32px;
-  }
+  .archive-link { text-align: center; margin-top: 32px; }
   .archive-link a {
     display: inline-block;
     color: var(--accent);
@@ -231,14 +200,7 @@
     border-radius: 8px;
   }
   .archive-link a:hover { background: var(--accent-light); }
-
-  footer {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 12px;
-    color: var(--muted);
-  }
-
+  footer { text-align: center; margin-top: 40px; font-size: 12px; color: var(--muted); }
   @media (max-width: 480px) {
     body { padding: 16px 12px 48px; font-size: 15px; }
     .header .date { font-size: 22px; }
@@ -252,10 +214,10 @@
 
   <div class="header">
     <div class="brand">每日简报 · Daily Digest</div>
-    <div class="date">2026年06月22日 周一</div>
+    <div class="date">2026年06月23日 周二</div>
     <div class="lead">
-      AI竞速赛里中国选手后来居上，美联储鹰派信号震动市场，外交战场上和谈与封锁并行——
-      这个周一，每一条新闻都在指向未来某个不确定的拐点。
+      美伊谈判昨夜在瑞士谈出了60天路线图，苹果用一个新「Siri AI」告别了十五年的尴尬，
+      世界银行拉响了自新冠疫情以来最慢增长的警报——这个周二，几件历史量级的事情同时在发生。
     </div>
   </div>
 
@@ -268,17 +230,33 @@
 
     <div class="card">
       <span class="tag tag-tech">人工智能</span>
-      <h3>中国AI模型 MiniMax M3 速度提升15倍，编程基准正面超越 GPT-5.5</h3>
+      <h3>苹果在 WWDC 2026 正式推出「Siri AI」，十五年积怨迎来彻底重建</h3>
       <p class="facts">
-        上海 MiniMax 于6月1日正式发布旗舰模型 M3，采用全新稀疏注意力机制（MSA），在百万 token 上下文场景下解码速度提升15.6倍、预填充速度提升9.7倍，计算量仅为上代的1/20。在国际编程基准 SWE-bench Pro 上，M3 以59.0%的通过率小幅超越 OpenAI GPT-5.5 的58.6%，而 API 调用成本不到后者的十二分之一。模型权重已于发布后10天内开源。
+        苹果于6月8日的 WWDC 2026 发布了全面重构的 Siri AI，这不是"升级"——是从头重做。新 Siri 被整合进 Dynamic Island，支持深度联系上下文（邮件、照片、日历联动），可回答网络上几乎任何问题，并将对话历史保存为独立 App。语音引擎重新设计，声音更自然、支持个性化调节。visionOS 上的 Siri 获得可放置任意位置的3D可视化界面。新功能将先在美国英文版公测，暂不在欧盟及中国上线。
       </p>
       <div class="insight">
         <span class="insight-label">💡 解读</span>
-        这不只是跑分之争。一个开源模型正面PK闭源旗舰，且便宜12倍——这意味着任何创业公司、任何开发者都能"零成本"用上接近最强的编程AI。更值得关注的是，"开放"阵营正在加速缩小与"封闭"阵营的差距，AI的护城河正在被一块块填平。当优质模型变成白菜价，真正的竞争将转移到谁能把AI用得更好。
+        苹果在 AI 时代迟到了将近两年，但今天的「Siri AI」可能是这家公司在 AI 领域最重要的一次赌注。真正值得关注的不是功能清单，而是隐私架构：苹果声称大量计算在设备本地完成，这与 Google 和 OpenAI"数据上云"的路线截然不同。如果苹果能让 AI 既强大又让人放心地信任，这才是真正颠覆格局的事——对于十几亿部 iPhone 的主人来说，这个问题不是技术问题，是安全感问题。
       </div>
       <div class="source">来源：
-        <a href="https://venturebeat.com/technology/minimax-teases-upcoming-m3-model-with-new-sparse-attention-mechanism-and-15-6x-response-speed-boost" target="_blank">VentureBeat</a> ·
-        <a href="https://theaicronicle.com/en/news/research/minimax-m3-china-ai-speed-breakthrough" target="_blank">The AI Chronicle</a>
+        <a href="https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/" target="_blank">Apple Newsroom</a> ·
+        <a href="https://www.macrumors.com/2026/06/08/apple-announces-siri-ai/" target="_blank">MacRumors</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-tech">AI 监管</span>
+      <h3>美国国会提出269页《伟大美国人工智能法案》，史上最全面联邦 AI 监管框架亮相</h3>
+      <p class="facts">
+        美国众议院议员 Jay Obernolte 与 Lori Trahan 联合提出《伟大美国人工智能法案》（Great American Artificial Intelligence Act），全文269页，是迄今为止美国国会提出的最全面联邦 AI 立法草案。法案涵盖 AI 安全测试、透明度要求、政府采购标准及对齐研究资金等内容，与此同时白宫也于6月间签署了关于推进 AI 创新与安全的总统行政令。
+      </p>
+      <div class="insight">
+        <span class="insight-label">💡 解读</span>
+        这是美国联邦 AI 立法真正进入赛道的信号。此前美国在 AI 监管上采取观望姿态，把主动权拱手让给欧盟；现在，269页的草案说明华盛顿意识到"不管"本身就是一种管法，只不过管的是竞争对手超车的节奏。需要观察的是：这份草案会在多大程度上平衡"促进创新"与"管控风险"——历史上，凡是两边都想顾的法案，往往两边都顾不好。
+      </div>
+      <div class="source">来源：
+        <a href="https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/" target="_blank">White House</a> ·
+        <a href="https://aistartupedge.com/latest-ai-news-june-2026/" target="_blank">AI Startup Edge</a>
       </div>
     </div>
   </div>
@@ -292,17 +270,33 @@
 
     <div class="card">
       <span class="tag tag-politics">地缘政治</span>
-      <h3>万斯抵达瑞士主导美伊核谈，伊朗同期宣布关闭霍尔木兹海峡</h3>
+      <h3>美伊瑞士谈判达成60天路线图：伊朗重开核查、霍尔木兹划出扫雷路径</h3>
       <p class="facts">
-        美国副总统 JD 万斯于6月21日抵达瑞士，与伊朗谈判代表正式启动为期60天的核协议技术细节磋商，特使威特科夫与贾里德·库什纳已先期就位。然而同期，伊朗军方宣布关闭霍尔木兹海峡——全球约五分之一石油和天然气贸易途经此处。与此同时，黎巴嫩以色列与真主党交火持续，局势几乎与谈判同步升温。
+        美国副总统万斯与伊朗谈判代表于6月21日在瑞士结束高强度磋商，双方就"60天内达成最终协议"形成路线图，并同意设立协调机制防止霍尔木兹海峡冲突及推进扫雷。伊朗同意邀请国际原子能机构（IAEA）核查人员重返，外长阿拉格希表示部分冻结资产已获释放、石油制裁获豁免。美伊黎三方还同意建立"去冲突"机制，推动黎巴嫩战场全面停火。主要核问题仍悬而未决，技术工作组将于近期启动。
       </p>
       <div class="insight">
         <span class="insight-label">💡 解读</span>
-        "边谈边打"在中东历史上并不陌生，但霍尔木兹海峡从未真正被封锁——哪怕只是威胁，就足以让油价跳动、全球供应链颤抖。万斯亲赴瑞士意味着特朗普政府押注这轮外交，但伊朗的封锁姿态像在说：我们不会白给。60天的倒计时钟，决定的可能不只是伊朗核问题，还有全球能源市场的走势。
+        这是近年来中东外交最具实质意义的一次进展，但别急着庆祝——"路线图"和"协议"之间有万重山。60天倒计时从现在开始，期间任何一次军事摩擦都可能让谈判脱轨。对普通人最直接的影响在能源：霍尔木兹海峡全球约五分之一的石油天然气经由此处，谈判顺利则油价压力减轻、通胀有望降温；若谈判破裂，油价反弹将快而猛。接下来60天，这是全球经济最重要的一根弦。
       </div>
       <div class="source">来源：
-        <a href="https://www.npr.org/2026/06/20/nx-s1-5865006/fighting-lebanon-despite-ceasefire" target="_blank">NPR</a> ·
-        <a href="https://abc7ny.com/post/jd-vance-arrives-switzerland-launch-talks-iran-nuclear-program/19344730/" target="_blank">ABC7 New York</a>
+        <a href="https://www.cnbc.com/2026/06/22/us-iran-roadmap-final-deal-switzerland-talks-lebanon-deconfliction.html" target="_blank">CNBC</a> ·
+        <a href="https://www.npr.org/2026/06/21/g-s1-129222/us-iran-deal-lebanon-israel-strait-hormuz-jd-vance" target="_blank">NPR</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-politics">中美关系</span>
+      <h3>中国制裁10家美国军工企业，回应美方对华科技出口限制</h3>
+      <p class="facts">
+        中国周一宣布对10家美国军事相关企业实施制裁，这是对美国近期将多家中国科技企业列入国防合同禁止名单的直接反制。被制裁美国公司将面临在华业务受限、高管禁止入境中国等措施。
+      </p>
+      <div class="insight">
+        <span class="insight-label">💡 解读</span>
+        中美之间的科技与军工制裁正在形成一种"对称性报复"的节奏——你限制我的芯片，我限制你的军工企业；你封我的科技公司，我封你的国防承包商。这种互相精准掐脖子的博弈，表面上是对等报复，实质是双方都在强迫全球供应链做选边站队的决定。对跨国企业而言，在中美同时运营的代价正在快速上升。
+      </div>
+      <div class="source">来源：
+        <a href="https://www.cnbc.com/world-politics/" target="_blank">CNBC World Politics</a> ·
+        <a href="https://www.npr.org/sections/world/" target="_blank">NPR World</a>
       </div>
     </div>
   </div>
@@ -315,18 +309,18 @@
     </div>
 
     <div class="card">
-      <span class="tag tag-economy">美联储</span>
-      <h3>美联储按兵不动却暗示年内加息，新主席沃什鹰派首秀令市场错愕</h3>
+      <span class="tag tag-economy">全球经济</span>
+      <h3>世界银行：2026年全球增速降至2.5%，新冠疫情后最低，中东冲突是主因</h3>
       <p class="facts">
-        美联储6月17日维持基准利率于3.5%–3.75%不变，但在新主席凯文·沃什主持的首次新闻发布会上，19名官员中有9名预计年内至少加息一次——这是对年初降息预期的大幅逆转。沃什明确表态："我们在通胀上已经失误了五年，现在要纠正。"受此影响，市场几乎彻底抹去年内降息预期，叠加伊朗局势推高能源价格，通胀压力居高不下。
+        世界银行《全球经济展望》2026年6月版将全球经济增长预测下调至2.5%，低于2025年的2.9%，是新冠疫情以来的最低水平。中东冲突引发能源价格急升、通胀卷土重来，推动主要央行维持甚至收紧货币政策。油价预计将在2026年均价94美元/桶；若霍尔木兹海峡持续关闭，油价可能飙至115美元/桶，届时全球增速将进一步跌至1.3%。新兴市场和发展中经济体全面放缓，中国房地产投资同比跌幅超过16%。
       </p>
       <div class="insight">
         <span class="insight-label">💡 解读</span>
-        全球刚从高利率阴影里探出头，美联储又掉头拉弓。对普通人而言，这意味着房贷、车贷、信用卡利率高位不退甚至走高；对新兴市场而言，美元走强会带来新一轮资本外流压力。沃什的鹰派风格加上中东局势推高的油价，构成一场"预期之外的双重紧缩"——2026年下半年，全球经济没有轻松可言。
+        2.5%这个数字看着不算可怕，但背后有两个让人警觉的结构：其一，全球经济还没从上一轮紧缩中缓过来就又被压了一脚；其二，各地"不均匀"的放缓对普通人影响差异极大——南亚仍是增长最快的区域，而中东和欧洲的压力尤其沉重。对中国而言，楼市投资跌超16%格外值得关注：房地产下行已持续数年，外部冲击叠加内部压力，今年的经济底线在哪里，仍是最难回答的问题。
       </div>
       <div class="source">来源：
-        <a href="https://www.npr.org/2026/06/17/nx-s1-5860084/fed-chief-warsh-first-fomc-meeting" target="_blank">NPR</a> ·
-        <a href="https://finance.yahoo.com/economy/policy/articles/warsh-hawkish-shock-9-fed-180221394.html" target="_blank">Yahoo Finance</a>
+        <a href="https://openknowledge.worldbank.org/server/api/core/bitstreams/5740355b-6f22-4c1f-a21f-015d5ff2192f/content" target="_blank">World Bank — Global Economic Prospects June 2026</a> ·
+        <a href="https://www.commondreams.org/news/world-bank-economic-outlook-2026" target="_blank">Common Dreams</a>
       </div>
     </div>
   </div>
@@ -339,18 +333,34 @@
     </div>
 
     <div class="card">
-      <span class="tag tag-science">环境科学</span>
-      <h3>UV光击碎水分子产生氢自由基，可无化学添加剂降解 PFAS"永久污染物"</h3>
+      <span class="tag tag-science">生命科学</span>
+      <h3>哺乳动物的再生能力从未消失——科学家发现它只是被"关掉了"</h3>
       <p class="facts">
-        丹麦奥胡斯大学水技术中心团队在《环境科学与技术》期刊发表研究，揭示强UV光（波长低于300nm）照射水分子会激发出高活性氢自由基，这些自由基能直接攻击并裂解 PFAS 分子的碳氟键——正是使它们"永久存在"的化学键——将其分解为无害小分子，整个过程无需添加任何化学试剂。
+        Science 及 ScienceDaily 六月相继报道两项突破：其一，哺乳动物细胞中"再生程序"的分子机制仍完好保存，只是被氧气感知机制主动抑制——蝾螈在低氧环境下能启动再生，而哺乳动物伤口处氧气浓度较高，系统随即"关闭"再生转为结疤；其二，德克萨斯 A&M 大学团队对小鼠序贯施用两种生长因子（FGF2 随后 BMP2），成功在截肢后引导身体从瘢痕愈合转向骨骼、关节及韧带的实质性再生。
       </p>
       <div class="insight">
         <span class="insight-label">💡 解读</span>
-        PFAS 被称为"永久化学物"，因为它们几乎不可降解，已渗入全球饮用水、土壤乃至人体血液。这项发现的意义不只是找到一种处理方法，更重要的是揭示了机制——知道了"为什么有效"，才能设计出更高效、更便宜的净化装置。从实验室到实用仍有距离，但这是真正意义上的突破：人类第一次看到了与"永久污染"打平手的可能。
+        这件事之所以让人震惊，在于它颠覆了我们对"进化丢失"的认知。我们一直以为人类不会再生是因为在进化中"失去"了这项能力。但现在的证据说：不，那个能力还在，只是被更高优先级的程序压住了。这意味着再生医学不必发明什么新东西，只需找到解锁开关。距离临床应用还很远，但这是最重要的一步——证明方向是对的。
       </div>
       <div class="source">来源：
-        <a href="https://www.sciencedaily.com/releases/2026/06/260615033846.htm" target="_blank">ScienceDaily</a> ·
-        <a href="https://www.medicaldaily.com/pfas-forever-chemicals-uv-light-hydrogen-radicals-destroyed-environmental-science-2026-475705" target="_blank">Medical Daily</a>
+        <a href="https://www.sciencedaily.com/releases/2026/06/260617032207.htm" target="_blank">ScienceDaily — Humans may have hidden regenerative powers</a> ·
+        <a href="https://www.science.org/content/article/scienceadviser-scientists-flip-switch-tissue-regeneration-mammals" target="_blank">Science AAAS — Scientists flip the switch on tissue regeneration</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-science">古生物学</span>
+      <h3>灵长类起源被颠覆：最早的灵长类动物来自寒冷北美，而非热带雨林</h3>
+      <p class="facts">
+        最新古生物学研究显示，地球上最早的灵长类动物可能起源于北美的寒冷干旱地带，而非热带森林。部分最古老的灵长类物种甚至可能通过减缓新陈代谢或冬眠来适应北极圈附近的季节性极端气候，这与此前认为灵长类起源于温暖热带环境的主流假说相悖。
+      </p>
+      <div class="insight">
+        <span class="insight-label">💡 解读</span>
+        我们人类属于灵长目——这条发现也是在追溯我们自己的起源。如果最古老的灵长类能在冰封的北美熬过漫漫冬季，这意味着我们这一演化支系从一开始就具有极强的环境适应力，而不是温室中长大的物种。这或许也解释了为什么人类今天能在地球上几乎每一种气候中生存：适应极端环境的基因，可能早在数千万年前就写进了我们祖先的体内。
+      </div>
+      <div class="source">来源：
+        <a href="https://www.sciencenews.org/sn-magazine/june-2026" target="_blank">Science News — June 2026</a> ·
+        <a href="https://www.livescience.com/news" target="_blank">Live Science</a>
       </div>
     </div>
   </div>
@@ -358,10 +368,10 @@
   <!-- Book Recommendation -->
   <div class="book-section">
     <div class="book-label">📚 今日书籍推荐</div>
-    <h2>《即将到来的浪潮》<br><span style="font-size:15px;font-weight:400;opacity:0.8">The Coming Wave</span></h2>
-    <div class="book-author">Mustafa Suleyman（穆斯塔法·苏莱曼）著 · 2023年</div>
+    <h2>《权力与进步》<br><span style="font-size:15px;font-weight:400;opacity:0.8">Power and Progress</span></h2>
+    <div class="book-author">达伦·阿西莫格鲁 &amp; 西蒙·约翰逊 著 · 2023年</div>
     <p>
-      DeepMind 联合创始人苏莱曼在书中论述：AI 与合成生物学正在形成人类历史上最难遏制的技术浪潮，它将重构国家权力、企业竞争与个人生活——且没有暂停键。今天的新闻恰好是这本书的三条注脚：中国开源AI加速扩散、伊朗核谈背后的技术角力、乃至气候污染物的科技治理。这本书不给答案，但让你看懂这个时代在以什么速度奔向何处。
+      诺贝尔经济学奖得主阿西莫格鲁与麻省理工经济学家约翰逊在书中直指一个核心问题：技术进步本身不会自动带来共同繁荣——历史上每一次技术革命，受益最大的都是掌握技术的少数人，而不是普罗大众。今天美国国会刚提出 AI 立法草案、世界银行预警全球增速创疫情后最低，这本书的论点有了最好的现实注脚：AI 时代谁来制定规则，就决定了谁来分蛋糕。读完之后，看新闻的眼光会完全不一样。
     </p>
   </div>
 
@@ -369,15 +379,17 @@
   <div class="sources">
     <h3>本期来源</h3>
     <ul>
-      <li><a href="https://venturebeat.com/technology/minimax-teases-upcoming-m3-model-with-new-sparse-attention-mechanism-and-15-6x-response-speed-boost" target="_blank">VentureBeat — MiniMax M3 sparse attention announcement</a></li>
-      <li><a href="https://theaicronicle.com/en/news/research/minimax-m3-china-ai-speed-breakthrough" target="_blank">The AI Chronicle — MiniMax M3 China AI speed breakthrough</a></li>
-      <li><a href="https://www.scmp.com/tech/tech-trends/article/3355529/minimax-debuts-ai-model-built-long-and-complex-coding-tasks" target="_blank">South China Morning Post — MiniMax M3 coding model</a></li>
-      <li><a href="https://www.npr.org/2026/06/20/nx-s1-5865006/fighting-lebanon-despite-ceasefire" target="_blank">NPR — JD Vance arrives in Switzerland for Iran nuclear talks</a></li>
-      <li><a href="https://abc7ny.com/post/jd-vance-arrives-switzerland-launch-talks-iran-nuclear-program/19344730/" target="_blank">ABC7 New York — Vance Switzerland Iran nuclear program</a></li>
-      <li><a href="https://www.npr.org/2026/06/17/nx-s1-5860084/fed-chief-warsh-first-fomc-meeting" target="_blank">NPR — Fed Chair Warsh first FOMC meeting, rate hike signals</a></li>
-      <li><a href="https://finance.yahoo.com/economy/policy/articles/warsh-hawkish-shock-9-fed-180221394.html" target="_blank">Yahoo Finance — Warsh hawkish shock, 9 officials signal rate hike</a></li>
-      <li><a href="https://www.sciencedaily.com/releases/2026/06/260615033846.htm" target="_blank">ScienceDaily — UV light destroys PFAS forever chemicals</a></li>
-      <li><a href="https://www.medicaldaily.com/pfas-forever-chemicals-uv-light-hydrogen-radicals-destroyed-environmental-science-2026-475705" target="_blank">Medical Daily — PFAS UV hydrogen radicals study</a></li>
+      <li><a href="https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/" target="_blank">Apple Newsroom — Apple introduces Siri AI</a></li>
+      <li><a href="https://www.macrumors.com/2026/06/08/apple-announces-siri-ai/" target="_blank">MacRumors — Apple Announces Siri AI at WWDC 2026</a></li>
+      <li><a href="https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/" target="_blank">White House — Promoting Advanced AI Innovation and Security</a></li>
+      <li><a href="https://aistartupedge.com/latest-ai-news-june-2026/" target="_blank">AI Startup Edge — Latest AI News June 2026</a></li>
+      <li><a href="https://www.cnbc.com/2026/06/22/us-iran-roadmap-final-deal-switzerland-talks-lebanon-deconfliction.html" target="_blank">CNBC — U.S., Iran agree on roadmap for final deal</a></li>
+      <li><a href="https://www.npr.org/2026/06/21/g-s1-129222/us-iran-deal-lebanon-israel-strait-hormuz-jd-vance" target="_blank">NPR — The U.S. and Iran agree to a 'road map' for a final deal</a></li>
+      <li><a href="https://openknowledge.worldbank.org/server/api/core/bitstreams/5740355b-6f22-4c1f-a21f-015d5ff2192f/content" target="_blank">World Bank — Global Economic Prospects June 2026</a></li>
+      <li><a href="https://www.commondreams.org/news/world-bank-economic-outlook-2026" target="_blank">Common Dreams — World Bank Economic Outlook 2026</a></li>
+      <li><a href="https://www.sciencedaily.com/releases/2026/06/260617032207.htm" target="_blank">ScienceDaily — Humans may have hidden regenerative powers</a></li>
+      <li><a href="https://www.science.org/content/article/scienceadviser-scientists-flip-switch-tissue-regeneration-mammals" target="_blank">Science AAAS — Scientists flip the switch on tissue regeneration in mammals</a></li>
+      <li><a href="https://www.sciencenews.org/sn-magazine/june-2026" target="_blank">Science News — June 2026 Issue</a></li>
     </ul>
   </div>
 
