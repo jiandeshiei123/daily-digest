@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日简报 · 2026年06月23日</title>
+<style>
+  :root {
+    --bg: #f7f6f2;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --muted: #6b7280;
+    --accent: #2563eb;
+    --accent-light: #eff6ff;
+    --border: #e5e7eb;
+    --insight-bg: #f0f9ff;
+    --insight-border: #3b82f6;
+    --tag-tech-bg: #dbeafe;
+    --tag-tech-text: #1d4ed8;
+    --tag-politics-bg: #fce7f3;
+    --tag-politics-text: #9d174d;
+    --tag-economy-bg: #dcfce7;
+    --tag-economy-text: #166534;
+    --tag-science-bg: #fef3c7;
+    --tag-science-text: #92400e;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    padding: 24px 16px 60px;
+  }
+  .container { max-width: 680px; margin: 0 auto; }
+
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 36px 0 28px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 32px;
+  }
+  .header .brand {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .header .date {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 18px;
+    letter-spacing: -0.02em;
+  }
+  .header .lead {
+    font-size: 15px;
+    color: #374151;
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.72;
+    background: var(--accent-light);
+    border-left: 4px solid var(--accent);
+    padding: 14px 18px;
+    border-radius: 0 8px 8px 0;
+    text-align: left;
+  }
+
+  /* Section */
+  .section { margin-bottom: 14px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-header .emoji { font-size: 22px; }
+  .section-header h2 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.01em;
+  }
+
+  /* Card */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+  }
+  .tag-tech { background: var(--tag-tech-bg); color: var(--tag-tech-text); }
+  .tag-politics { background: var(--tag-politics-bg); color: var(--tag-politics-text); }
+  .tag-economy { background: var(--tag-economy-bg); color: var(--tag-economy-text); }
+  .tag-science { background: var(--tag-science-bg); color: var(--tag-science-text); }
+
+  .card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  .card .facts {
+    font-size: 14.5px;
+    color: #374151;
+    margin-bottom: 14px;
+    line-height: 1.72;
+  }
+  .card .insight {
+    background: var(--insight-bg);
+    border-left: 3px solid var(--insight-border);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #1e3a5f;
+    line-height: 1.72;
+  }
+  .insight-label {
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
+  }
+  .card .source {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .card .source a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .card .source a:hover { text-decoration: underline; }
+
+  /* Book section */
+  .book-section {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+    border-radius: 16px;
+    padding: 28px 28px;
+    margin-top: 36px;
+    margin-bottom: 32px;
+    color: #fff;
+  }
+  .book-label {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.72;
+    margin-bottom: 10px;
+  }
+  .book-section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    line-height: 1.35;
+  }
+  .book-author {
+    font-size: 13px;
+    opacity: 0.78;
+    margin-bottom: 14px;
+  }
+  .book-section p {
+    font-size: 14.5px;
+    line-height: 1.72;
+    opacity: 0.92;
+  }
+
+  /* Sources */
+  .sources {
+    margin-top: 32px;
+    padding: 20px 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+  .sources h3 {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .sources ul { list-style: none; }
+  .sources li {
+    font-size: 13px;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .sources li:last-child { border-bottom: none; }
+  .sources a {
+    color: var(--accent);
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .sources a:hover { text-decoration: underline; }
+
+  /* Archive link */
+  .archive-link {
+    text-align: center;
+    margin-top: 32px;
+  }
+  .archive-link a {
+    display: inline-block;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 22px;
+    border: 1.5px solid var(--accent);
+    border-radius: 8px;
+  }
+  .archive-link a:hover { background: var(--accent-light); }
+
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 480px) {
+    body { padding: 16px 12px 48px; font-size: 15px; }
+    .header .date { font-size: 22px; }
+    .card { padding: 18px 16px; }
+    .book-section { padding: 22px 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="brand">每日简报 · Daily Digest</div>
+    <div class="date">2026年06月23日 周二</div>
+    <div class="lead">
+      美伊谈判昨夜在瑞士谈出了60天路线图，苹果用一个新"Siri AI"告别了十五年的尴尬，
+      世界银行拉响了自新冠疫情以来最慢增长的警报——这个周二，几件历史量级的事情同时在发生。
+    </div>
+  </div>
+
+  <!-- 科技 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="emoji">🤖</span>
+      <h2>科技 · AI &amp; 创新</h2>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-tech">人工智能</span>
+      <h3>苹果在 WWDC 2026 正式推出「Siri AI」，十五年积怨迎来彻底重建</h3>
+      <p class="facts">
+        苹果于6月8日的 WWDC 2026 发布了全面重构的 Siri AI，这不是"升级"——是从头重做。新 Siri 被整合进 Dynamic Island，支持深度联系上下文（邮件、照片、日历联动），可回答网络上几乎任何问题，并将对话历史保存为独立 App。语音引擎重新设计，声音更自然、支持个性化调节。visionOS 上的 Siri 获得可放置任意位置的3D可视化界面。新功能将先在美国英文版公测，暂不在欧盟及中国上线。
+      </p>
+      <div class="insight">
+        <span class="insight-label">💡 解读</span>
+        苹果在 AI 时代迟到了将近两年，但今天的"Siri AI"可能是这家公司在 AI 领域最重要的一次赌注。真正值得关注的不是功能清单，而是隐私架构：苹果声称大量计算在设备本地完成，这与 Google 和 OpenAI"数据上云"的路线截然不同。如果苹果能让 AI 既强大又让人放心地信任，这才是真正颠覆格局的事——对于十几亿部 iPhone 的主人来说，这个问题不是技术问题，是安全感问题。
+      </div>
+      <div class="source">来源：
+        <a href="https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/" target="_blank">Apple Newsroom</a> ·
+        <a href="https://www.macrumors.com/2026/06/08/apple-announces-siri-ai/" target="_blank">MacRumors</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-tech">AI 监管</span>
+      <h3>美国国会提出269页《伟大美国人工智能法案》，史上最全面联邦 AI 监管框架亮相</h3>
+      <p class="facts">
+        美国众议院议员 Jay Obernolte 与 Lori Trahan 联合提出《伟大美国人工智能法案》（Great American Artificial Intelligence Act），全文269页，是迄今为止美国国会提出的最全面联邦 AI 立法草案。法案涵盖 AI 安全测试、透明度要求、政府采购标准及对齐研究资金等内容，与此同时白宫也于6月间签署了关于推进 AI 创新与安全的总统行政令。
+      </p>
+      <div class="insight">
+        <span class="insight-label">💡 解读</span>
+        这是美国联邦 AI 立法真正进入赛道的信号。此前美国在 AI 监管上采取观望姿态，把主动权拱手让给欧盟；现在，269页的草案说明华盛顿意识到"不管"本身就是一种管法，只不过管的是竞争对手超车的节奏。需要观察的是：这份草案会在多大程度上平衡"促进创新"与"管控风险"——历史上，凡是两边都想顾的法案，往往两边都顾不好。
+      </div>
+      <div class="source">来源：
+        <a href="https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/" target="_blank">White House</a> ·
+        <a href="https://aistartupedge.com/latest-ai-news-june-2026/" target="_blank">AI Startup Edge</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 政治/国际 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="emoji">🌍</span>
+      <h2>政治 · 国际</h2>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-politics">地缘政治</span>
+      <h3>美伊瑞士谈判达成60天路线图：伊朗重开核查、霍尔木兹海峡划出解除雷区路径</h3>
+      <p class="facts">
+        美国副总统万斯与伊朗谈判代表于6月21日在瑞士结束高强度磋商，双方就"60天内达成最终协议"形成路线图，并同意设立协调机制以防止霍尔木兹海峡发生冲突及推进扫雷工作。伊朗同意邀请国际原子能机构（IAEA）核查人员重返该国，外长阿拉格希表示部分冻结资产已获释放、石油制裁也获豁免。此外，美伊黎三方还同意建立"去冲突"机制，推动黎巴嫩战场全面停火。主要核问题仍悬而未决，技术工作组将于近期启动。
+      </p>
+      <div class="insight">
+        <span class="insight-label">💡 解读</span>
+        这是近年来中东外交最具实质意义的一次进展，但别急着庆祝——"路线图"和"协议"之间有万重山。60天倒计时从现在开始，期间任何一次军事摩擦都可能让谈判脱轨。对普通人最直接的影响在能源：霍尔木兹海峡全球约五分之一的石油天然气经由此处，如果谈判顺利推进，油价压力将明显减轻，通胀有望降温；若谈判破裂，油价反弹将快而猛。接下来60天，这是全球经济最重要的一根弦。
+      </div>
+      <div class="source">来源：
+        <a href="https://www.cnbc.com/2026/06/22/us-iran-roadmap-final-deal-switzerland-talks-lebanon-deconfliction.html" target="_blank">CNBC</a> ·
+        <a href="https://www.npr.org/2026/06/21/g-s1-129222/us-iran-deal-lebanon-israel-strait-hormuz-jd-vance" target="_blank">NPR</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-politics">中美关系</span>
+      <h3>中国制裁10家美国军工企业，回应美方对华科技出口限制</h3>
+      <p class="facts">
+        中国周一宣布对10家美国军事相关企业实施制裁，这是对美国近期将多家中国科技企业列入国防合同禁止名单的直接反制。被制裁的美国公司面临在华业务受限、高管禁止入境中国等措施。
+      </p>
+      <div class="insight">
+        <span class="insight-label">💡 解读</span>
+        中美之间的科技与军工制裁正在形成一种"对称性报复"的节奏——你限制我的芯片，我限制你的军工企业；你封我的科技公司，我封你的国防承包商。这种互相精准掐脖子的博弈，表面上是对等报复，实质上是双方都在强迫全球供应链做选边站队的决定。对跨国企业而言，在中美同时运营的代价正在快速上升。
+      </div>
+      <div class="source">来源：
+        <a href="https://www.cnbc.com/world-politics/" target="_blank">CNBC World Politics</a> ·
+        <a href="https://www.npr.org/sections/world/" target="_blank">NPR World</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 经济/财经 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="emoji">📈</span>
+      <h2>经济 · 财经</h2>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-economy">全球经济</span>
+      <h3>世界银行：2026年全球增速将降至2.5%，新冠疫情后最低，中东冲突是主因</h3>
+      <p class="facts">
+        世界银行《全球经济展望》2026年6月版将全球经济增长预测下调至2.5%，低于2025年的2.9%，是新冠疫情以来的最低水平。报告指出，中东冲突引发能源价格急升、通胀卷土重来，并推动主要央行维持甚至收紧货币政策。油价预计将在2026年均价94美元/桶；若霍尔木兹海峡持续关闭，油价可能飙至115美元/桶，届时全球增速将进一步跌至1.3%。新兴市场和发展中经济体全面放缓，中国房地产投资同比跌幅超过16%。
+      </p>
+      <div class="insight">
+        <span class="insight-label">💡 解读</span>
+        2.5%这个数字看着不算可怕，但背后有两个让人警觉的结构：其一，这是在全球经济还没完全从上一轮紧缩中缓过来时又被压了一脚；其二，各地"不均匀"的放缓对普通人影响差异极大——南亚仍是增长最快的区域，而中东和欧洲的压力尤其沉重。对中国而言，楼市投资跌超16%是一个格外值得关注的数字：房地产下行已经持续数年，外部冲击叠加内部压力，今年的经济底线在哪里，仍是最难回答的问题。
+      </div>
+      <div class="source">来源：
+        <a href="https://openknowledge.worldbank.org/server/api/core/bitstreams/5740355b-6f22-4c1f-a21f-015d5ff2192f/content" target="_blank">World Bank — Global Economic Prospects June 2026</a> ·
+        <a href="https://www.commondreams.org/news/world-bank-economic-outlook-2026" target="_blank">Common Dreams</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 科学/人文 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="emoji">🔬</span>
+      <h2>科学 · 人文</h2>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-science">生命科学</span>
+      <h3>哺乳动物的再生能力从未消失——科学家发现它只是被"关掉了"</h3>
+      <p class="facts">
+        6月，Science 及 ScienceDaily 相继报道了两项突破性发现：其一，哺乳动物细胞中"再生程序"的分子机制仍然保存完好，只是被氧气感知机制主动抑制——蝾螈等两栖类在低氧环境下能启动再生，而哺乳动物伤口处氧气浓度较高，系统随即"关闭"再生，转为结疤；其二，德克萨斯 A&M 大学研究团队通过对小鼠序贯施用两种生长因子（FGF2 随后 BMP2），成功在截肢后重新引导身体从瘢痕愈合转向骨骼、关节及韧带的实质性再生。
+      </p>
+      <div class="insight">
+        <span class="insight-label">💡 解读</span>
+        这件事之所以让人震惊，在于它颠覆了我们对"进化丢失"的认知。我们一直以为蝾螈会再生而人类不会，是因为人类在进化中"失去"了这项能力。但现在的证据说：不，那个能力还在，只是被更高优先级的程序压住了。这意味着，再生医学不必发明什么新东西，只需找到解锁开关。距离临床应用还很远，但这是最重要的一步——证明方向是对的。
+      </div>
+      <div class="source">来源：
+        <a href="https://www.sciencedaily.com/releases/2026/06/260617032207.htm" target="_blank">ScienceDaily — Humans may have hidden regenerative powers</a> ·
+        <a href="https://www.science.org/content/article/scienceadviser-scientists-flip-switch-tissue-regeneration-mammals" target="_blank">Science — Scientists flip the switch on tissue regeneration</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-science">古生物学</span>
+      <h3>灵长类起源被颠覆：最早的灵长类动物来自寒冷北美，不是热带雨林</h3>
+      <p class="facts">
+        最新古生物学研究显示，地球上最早的灵长类动物可能不是起源于热带森林，而是来自北美的寒冷干旱地带。部分最古老的灵长类物种甚至可能通过减缓新陈代谢或冬眠来适应北极圈附近的季节性极端气候。这一发现与此前认为灵长类起源于温暖热带环境的主流假说相悖。
+      </p>
+      <div class="insight">
+        <span class="insight-label">💡 解读</span>
+        我们人类属于灵长目——这条发现也是在追溯我们自己的起源。如果最古老的灵长类能在冰封的北美熬过漫漫冬季，这意味着我们这一演化支系从一开始就具有极强的环境适应力，而不是温室中长大的物种。这或许也解释了为什么人类今天能在地球上几乎每一种气候中生存：适应极端环境的基因，可能早在数千万年前就写进了我们的祖先体内。
+      </div>
+      <div class="source">来源：
+        <a href="https://www.sciencenews.org/sn-magazine/june-2026" target="_blank">Science News — June 2026</a> ·
+        <a href="https://www.livescience.com/news" target="_blank">Live Science</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Book Recommendation -->
+  <div class="book-section">
+    <div class="book-label">📚 今日书籍推荐</div>
+    <h2>《权力与进步》<br><span style="font-size:15px;font-weight:400;opacity:0.8">Power and Progress</span></h2>
+    <div class="book-author">达伦·阿西莫格鲁 &amp; 西蒙·约翰逊 著 · 2023年</div>
+    <p>
+      诺贝尔经济学奖得主阿西莫格鲁与麻省理工经济学家约翰逊在书中直指一个核心问题：技术进步本身不会自动带来共同繁荣——历史上每一次技术革命，受益最大的都是掌握技术的少数人，而不是普罗大众。今天美国国会刚提出 AI 立法草案、世界银行预警全球增速创疫情后最低，这本书的论点有了最好的现实注脚：AI 时代谁来制定规则，就决定了谁来分蛋糕。读完之后，看新闻的眼光会完全不一样。
+    </p>
+  </div>
+
+  <!-- Sources -->
+  <div class="sources">
+    <h3>本期来源</h3>
+    <ul>
+      <li><a href="https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/" target="_blank">Apple Newsroom — Apple introduces Siri AI</a></li>
+      <li><a href="https://www.macrumors.com/2026/06/08/apple-announces-siri-ai/" target="_blank">MacRumors — Apple Announces Siri AI at WWDC 2026</a></li>
+      <li><a href="https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/" target="_blank">White House — Promoting Advanced AI Innovation and Security</a></li>
+      <li><a href="https://aistartupedge.com/latest-ai-news-june-2026/" target="_blank">AI Startup Edge — Latest AI News June 2026</a></li>
+      <li><a href="https://www.cnbc.com/2026/06/22/us-iran-roadmap-final-deal-switzerland-talks-lebanon-deconfliction.html" target="_blank">CNBC — U.S., Iran agree on roadmap for final deal</a></li>
+      <li><a href="https://www.npr.org/2026/06/21/g-s1-129222/us-iran-deal-lebanon-israel-strait-hormuz-jd-vance" target="_blank">NPR — The U.S. and Iran agree to a 'road map' for a final deal</a></li>
+      <li><a href="https://openknowledge.worldbank.org/server/api/core/bitstreams/5740355b-6f22-4c1f-a21f-015d5ff2192f/content" target="_blank">World Bank — Global Economic Prospects June 2026</a></li>
+      <li><a href="https://www.commondreams.org/news/world-bank-economic-outlook-2026" target="_blank">Common Dreams — World Bank Economic Outlook 2026</a></li>
+      <li><a href="https://www.sciencedaily.com/releases/2026/06/260617032207.htm" target="_blank">ScienceDaily — Humans may have hidden regenerative powers</a></li>
+      <li><a href="https://www.science.org/content/article/scienceadviser-scientists-flip-switch-tissue-regeneration-mammals" target="_blank">Science AAAS — Scientists flip the switch on tissue regeneration in mammals</a></li>
+      <li><a href="https://www.sciencenews.org/sn-magazine/june-2026" target="_blank">Science News — June 2026 Issue</a></li>
+    </ul>
+  </div>
+
+  <div class="archive-link">
+    <a href="archive.html">📂 查看往期简报</a>
+  </div>
+
+  <footer>
+    每日简报 · Daily Digest &nbsp;|&nbsp; 内容基于公开新闻来源整理，仅供参考
+  </footer>
+
+</div>
+</body>
+</html>
