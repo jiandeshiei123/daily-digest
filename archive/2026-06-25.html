@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日简报 · 2026年06月25日</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+    background: #f5f4f0;
+    color: #2d2d2d;
+    line-height: 1.75;
+    font-size: 16px;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+  }
+
+  /* ── Header ── */
+  .header {
+    text-align: center;
+    padding: 36px 0 28px;
+    border-bottom: 2px solid #e0ddd5;
+    margin-bottom: 32px;
+  }
+  .header .label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: 0.5px;
+  }
+  .header .date-line {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #666;
+  }
+
+  /* ── Lead ── */
+  .lead {
+    background: #fff8e8;
+    border-left: 4px solid #f0b429;
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin-bottom: 36px;
+    font-size: 15px;
+    color: #3d3000;
+    line-height: 1.8;
+  }
+  .lead strong { color: #b07800; }
+
+  /* ── Section ── */
+  .section {
+    margin-bottom: 40px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0ddd5;
+  }
+  .section-icon { font-size: 22px; }
+  .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #555;
+    text-transform: uppercase;
+  }
+
+  /* ── News Card ── */
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+    border: 1px solid #ebe9e2;
+  }
+  .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .card-facts {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 12px;
+    line-height: 1.7;
+  }
+  .card-insight {
+    background: #f0f7ff;
+    border-left: 3px solid #4a90d9;
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #1d3557;
+    line-height: 1.8;
+  }
+  .card-insight::before {
+    content: "💡 解读 · ";
+    font-weight: 700;
+    color: #4a90d9;
+  }
+  .card-source {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #999;
+  }
+  .card-source a {
+    color: #4a90d9;
+    text-decoration: none;
+  }
+  .card-source a:hover { text-decoration: underline; }
+
+  /* ── Book ── */
+  .book-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 22px 24px;
+    border: 1px solid #ebe9e2;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+  }
+  .book-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+  .book-author {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 14px;
+  }
+  .book-reason {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.8;
+  }
+
+  /* ── Sources ── */
+  .sources {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e0ddd5;
+  }
+  .sources h3 {
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .sources ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .sources li { font-size: 13px; }
+  .sources a {
+    color: #4a90d9;
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .sources a:hover { text-decoration: underline; }
+
+  /* ── Footer ── */
+  .footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px dashed #d5d2c8;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+  }
+  .footer a {
+    color: #4a90d9;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 480px) {
+    .header h1 { font-size: 21px; }
+    .card-title { font-size: 16px; }
+    .container { padding: 16px 12px 40px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="label">Daily Digest · 每日简报</div>
+    <h1>2026年06月25日 · 周四</h1>
+    <div class="date-line">今日关键词：AI立法 · 美伊核谈 · 美联储鹰派 · 量子太空</div>
+  </div>
+
+  <!-- Lead -->
+  <div class="lead">
+    <strong>今日导语：</strong>美国国会祭出史上最全面的联邦AI法草案，意图用一张联邦牌照统一碎片化的州级监管；大洋另一端，美伊60天核谈倒计时正式启动，中东局势迎来脆弱喘息；新美联储主席沃什首秀鹰派，九位官员预警年内加息，华尔街已经坐不住了；而在距地面400公里的太空，NASA的量子实验室刚刚完成终极升级，在微重力里造出有史以来最大的"第五态物质"。
+  </div>
+
+  <!-- 科技 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🤖</span>
+      <span class="section-title">科技 · AI &amp; 科技</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">美国首部综合联邦AI法草案出炉，269页文本冻结州级AI监管三年</div>
+      <div class="card-facts">
+        6月4日，众议员杰伊·奥伯诺尔特（共和党）与洛里·特拉汉（民主党）联合发布《大美国人工智能法》269页讨论草案。法案核心条款：三年内禁止各州专门立法规制AI模型<em>开发</em>过程，同时在联邦层面首次建立前沿AI安全审查机制，并将AI安全研究所（CAISI）正式纳入法定机构。法案同时要求大型前沿AI公司向联邦机构开放模型审查。
+      </div>
+      <div class="card-insight">
+        这是硅谷与国会之间一次典型的"政治交换"：科技公司用接受联邦统一审查换来监管确定性——50个州各立一套规则的噩梦暂时消失。三年窗口期里，谁能主导联邦标准的制定，实际上就在为未来十年的AI治理版图画线。对普通用户短期感知不大，但这张法案将决定你手机里的AI应用究竟要向谁负责。
+      </div>
+      <div class="card-source">来源：<a href="https://rollcall.com/2026/06/04/bipartisan-ai-draft-proposes-three-year-preemption-of-state-laws/" target="_blank" rel="noopener">Roll Call</a> · <a href="https://www.techpolicy.press/unpacking-the-great-american-artificial-intelligence-act-of-2026/" target="_blank" rel="noopener">TechPolicy.Press</a></div>
+    </div>
+  </div>
+
+  <!-- 政治/国际 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🌍</span>
+      <span class="section-title">政治 · 国际</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">美伊在瑞士达成60天核谈"路线图"，中东局势出现喘息窗口</div>
+      <div class="card-facts">
+        6月21日，美国与伊朗谈判代表在瑞士伯根施托克度假村谈判后宣布，双方同意一份"路线图"，计划在60天内就核问题、制裁解除以及黎巴嫩军事安排达成最终协议。双方设立核问题、制裁和监督争端解决三个工作组，高级委员会定期接收汇报。此路线图基于6月15日签署的备忘录框架之上进一步推进。
+      </div>
+      <div class="card-insight">
+        "路线图"好比婚前协议——意愿明确，细节全是雷区。60天倒计时里，伊朗浓缩铀存量如何处置、制裁解除的节奏与核查机制，每一项都够谈崩。油价已绷紧神经：特朗普任何一次表态都能让布伦特原油波动2%以上。这个窗口的真正价值，也许不在于最终文本，而在于让市场维持一段相对平静的定价预期——全球通胀因此能稍喘口气。
+      </div>
+      <div class="card-source">来源：<a href="https://www.cnbc.com/2026/06/22/us-iran-roadmap-final-deal-switzerland-talks-lebanon-deconfliction.html" target="_blank" rel="noopener">CNBC</a> · <a href="https://www.npr.org/2026/06/21/g-s1-129222/us-iran-deal-lebanon-israel-strait-hormuz-jd-vance" target="_blank" rel="noopener">NPR</a></div>
+    </div>
+  </div>
+
+  <!-- 经济/财经 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">📈</span>
+      <span class="section-title">经济 · 财经</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">新美联储主席沃什首秀鹰派，九位官员预警年内加息，两年期美债收益率单日跳涨16基点</div>
+      <div class="card-facts">
+        6月17日，美联储新任主席凯文·沃什主持首次议息会议，维持基准利率3.5%–3.75%不变，但"点阵图"显示9位官员预计年内需要加息，仅1人预计降息。会后两年期美债收益率单日跳升16个基点至4.21%，创逾一年新高。背景：自今年2月伊朗战争爆发以来，油价推升通胀至4.2%三年高位，市场最快预期10月加息。
+      </div>
+      <div class="card-insight">
+        沃什是货币鹰派圈子里的"老面孔"——他在2008年金融危机期间曾批评量化宽松的副作用。如今通胀反弹给了他正当理由。最快10月可能加息，意味着房贷利率还将走高，企业融资成本上升。对于因AI热潮抬高估值的科技股，加息预期是一盆冷水：折现率上升后，靠"未来利润"讲故事的高估值公司首当其冲。普通人感受最直接的是信用卡利率和浮动房贷——这场通胀的账，最终还是消费者来付。
+      </div>
+      <div class="card-source">来源：<a href="https://www.cnbc.com/2026/06/17/fed-interest-rate-decision-june-2026.html" target="_blank" rel="noopener">CNBC</a> · <a href="https://finance.yahoo.com/economy/policy/articles/warsh-hawkish-shock-9-fed-180221394.html" target="_blank" rel="noopener">Yahoo Finance</a></div>
+    </div>
+  </div>
+
+  <!-- 科学/人文 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🔬</span>
+      <span class="section-title">科学 · 人文</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">NASA"冷原子实验室"完成终极升级：太空中造出史上最大玻色—爱因斯坦凝聚体</div>
+      <div class="card-facts">
+        6月16日，国际空间站上的NASA冷原子实验室（CAL）在完成最终硬件升级后重新开机。新模块由航天员杰西卡·迈尔于5月完成安装，令实验室产生的玻色—爱因斯坦凝聚体（BEC，物质第五态）体积比此前大5倍，观测窗口大幅延长。此次升级是CAL在国际空间站退役前（预计约2030年）的最后一次硬件改造。
+      </div>
+      <div class="card-insight">
+        玻色—爱因斯坦凝聚体是量子力学最迷人的"奇点"：原子冷却到接近绝对零度时，失去各自"个性"，集体表现为一个巨大量子波。地球上重力在毫秒内就让这种脆弱状态坍缩，太空微重力让观测时间延长数十倍。这不是明天就有应用的技术，但它是量子传感、精密导航、引力波探测的基石——就像60年前的半导体实验室，那时没人知道最终会造出智能手机。
+      </div>
+      <div class="card-source">来源：<a href="https://www.techtimes.com/articles/318963/20260623/nasa-cold-atom-lab-restarts-after-final-upgrade-quantum-objects-now-five-times-larger.htm" target="_blank" rel="noopener">TechTimes</a> · <a href="https://www.sciencedaily.com/releases/2026/06/260622091507.htm" target="_blank" rel="noopener">ScienceDaily</a></div>
+    </div>
+  </div>
+
+  <!-- 书籍推荐 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">📚</span>
+      <span class="section-title">今日书籍推荐</span>
+    </div>
+
+    <div class="book-card">
+      <div class="book-title">《政治秩序与政治衰败》</div>
+      <div class="book-author">弗朗西斯·福山（Francis Fukuyama）著 · 2014年</div>
+      <div class="book-reason">
+        今天两则新闻——美国AI立法的两党博弈与美伊60天核谈——都指向同一个根本问题：<strong>制度能否在压力下完成自我更新？</strong>福山横跨200年历史，解剖国家能力、法治与民主问责制的生死循环，分析为何有些国家能在危机中进化，有些却走向"政治衰败"。读完之后，再看国会的AI法案草稿和伊核谈判桌，你会有一套完全不同的分析框架——不再只看"谁赢了"，而是看"这套制度还能撑多久"。
+      </div>
+    </div>
+  </div>
+
+  <!-- Sources -->
+  <div class="sources">
+    <h3>📎 参考来源</h3>
+    <ul>
+      <li><a href="https://rollcall.com/2026/06/04/bipartisan-ai-draft-proposes-three-year-preemption-of-state-laws/" target="_blank" rel="noopener">Roll Call — Bipartisan AI draft proposes three-year preemption of state laws</a></li>
+      <li><a href="https://www.techpolicy.press/unpacking-the-great-american-artificial-intelligence-act-of-2026/" target="_blank" rel="noopener">TechPolicy.Press — Unpacking the Great American Artificial Intelligence Act of 2026</a></li>
+      <li><a href="https://www.dlapiper.com/en-us/insights/publications/2026/06/unpacking-the-great-american-ai-act" target="_blank" rel="noopener">DLA Piper — Unpacking the Great American AI Act</a></li>
+      <li><a href="https://www.cnbc.com/2026/06/22/us-iran-roadmap-final-deal-switzerland-talks-lebanon-deconfliction.html" target="_blank" rel="noopener">CNBC — U.S., Iran agree on roadmap for final deal within 60 days</a></li>
+      <li><a href="https://www.npr.org/2026/06/21/g-s1-129222/us-iran-deal-lebanon-israel-strait-hormuz-jd-vance" target="_blank" rel="noopener">NPR — The U.S. and Iran agree to a 'road map' for a final deal</a></li>
+      <li><a href="https://www.cnbc.com/2026/06/17/fed-interest-rate-decision-june-2026.html" target="_blank" rel="noopener">CNBC — Fed interest rate decision June 2026: Fed holds rates steady</a></li>
+      <li><a href="https://finance.yahoo.com/economy/policy/articles/warsh-hawkish-shock-9-fed-180221394.html" target="_blank" rel="noopener">Yahoo Finance — Warsh Hawkish Shock: 9 Fed Officials Signal 2026 Rate Hike</a></li>
+      <li><a href="https://www.techtimes.com/articles/318963/20260623/nasa-cold-atom-lab-restarts-after-final-upgrade-quantum-objects-now-five-times-larger.htm" target="_blank" rel="noopener">TechTimes — NASA Cold Atom Lab Restarts After Final Upgrade</a></li>
+      <li><a href="https://www.sciencedaily.com/releases/2026/06/260622091507.htm" target="_blank" rel="noopener">ScienceDaily — NASA's Cold Atom Lab creating one of the weirdest forms of matter in space</a></li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>每日简报 · 自动生成 · 仅供参考</p>
+    <p style="margin-top:10px;"><a href="archive.html">📂 查看往期简报</a></p>
+  </div>
+
+</div>
+</body>
+</html>
