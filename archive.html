@@ -1,172 +1,116 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>往期简报 · Daily Digest</title>
-  <style>
-    :root {
-      --bg: #f8f7f4;
-      --surface: #ffffff;
-      --border: #e8e5df;
-      --primary: #2c5282;
-      --accent: #3182ce;
-      --text: #2d3748;
-      --text-light: #718096;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>往期简报 · Daily Digest</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+    background: #f5f4f0;
+    color: #2d2d2d;
+    line-height: 1.75;
+    font-size: 16px;
+  }
 
-    body {
-      font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.75;
-      font-size: 16px;
-    }
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+  }
 
-    .container {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 0 20px 64px;
-    }
+  .header {
+    text-align: center;
+    padding: 36px 0 28px;
+    border-bottom: 2px solid #e0ddd5;
+    margin-bottom: 32px;
+  }
+  .header .label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 10px;
+  }
+  .header h1 { font-size: 26px; font-weight: 700; color: #1a1a1a; }
+  .header p { margin-top: 8px; font-size: 14px; color: #666; }
 
-    .header {
-      padding: 52px 0 36px;
-      border-bottom: 2px solid var(--border);
-      margin-bottom: 44px;
-    }
+  .archive-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 
-    .date-label {
-      font-size: 12px;
-      color: var(--text-light);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
+  .archive-list li {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #ebe9e2;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    transition: box-shadow 0.15s;
+  }
+  .archive-list li:hover { box-shadow: 0 3px 8px rgba(0,0,0,0.1); }
 
-    .site-title {
-      font-size: 30px;
-      font-weight: 900;
-      color: var(--primary);
-      letter-spacing: -0.6px;
-      margin-bottom: 4px;
-    }
+  .archive-list a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    text-decoration: none;
+    color: inherit;
+  }
 
-    .subtitle {
-      font-size: 17px;
-      color: var(--text-light);
-    }
+  .archive-date { font-weight: 700; font-size: 15px; color: #1a1a1a; }
+  .archive-arrow { font-size: 18px; color: #4a90d9; }
 
-    .archive-list {
-      list-style: none;
-    }
+  .back-home {
+    display: inline-block;
+    margin-top: 32px;
+    font-size: 14px;
+    color: #4a90d9;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .back-home:hover { text-decoration: underline; }
 
-    .archive-item {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      margin-bottom: 12px;
-      transition: box-shadow 0.2s, border-color 0.2s;
-    }
+  .footer {
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px dashed #d5d2c8;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+  }
 
-    .archive-item:hover {
-      border-color: var(--accent);
-      box-shadow: 0 2px 12px rgba(49,130,206,0.1);
-    }
-
-    .archive-item a {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 22px;
-      text-decoration: none;
-      color: var(--text);
-    }
-
-    .archive-date {
-      font-size: 17px;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .archive-arrow {
-      font-size: 18px;
-      color: var(--accent);
-      opacity: 0.6;
-      transition: opacity 0.2s, transform 0.2s;
-    }
-
-    .archive-item:hover .archive-arrow {
-      opacity: 1;
-      transform: translateX(3px);
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-top: 36px;
-      padding: 12px 20px;
-      background: var(--primary);
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 600;
-      transition: background 0.2s;
-    }
-
-    .back-link:hover { background: var(--accent); }
-
-    @media (max-width: 480px) {
-      .site-title { font-size: 24px; }
-      .archive-date { font-size: 15px; }
-    }
-  </style>
+  @media (max-width: 480px) {
+    .header h1 { font-size: 21px; }
+    .container { padding: 16px 12px 40px; }
+  }
+</style>
 </head>
 <body>
-  <div class="container">
+<div class="container">
 
-    <header class="header">
-      <div class="date-label">Daily Digest · 每日简报</div>
-      <h1 class="site-title">往期简报</h1>
-      <div class="subtitle">按日期倒序，点击查看每日存档</div>
-    </header>
-
-    <ul class="archive-list">
-      <li class="archive-item">
-        <a href="archive/2026-06-24.html">
-          <span class="archive-date">2026年06月24日 · 周三</span>
-          <span class="archive-arrow">→</span>
-        </a>
-      </li>
-      <li class="archive-item">
-        <a href="archive/2026-06-23.html">
-          <span class="archive-date">2026年06月23日 · 周二</span>
-          <span class="archive-arrow">→</span>
-        </a>
-      </li>
-      <li class="archive-item">
-        <a href="archive/2026-06-22.html">
-          <span class="archive-date">2026年06月22日 · 周一</span>
-          <span class="archive-arrow">→</span>
-        </a>
-      </li>
-      <li class="archive-item">
-        <a href="archive/2026-06-21.html">
-          <span class="archive-date">2026年06月21日 · 周日</span>
-          <span class="archive-arrow">→</span>
-        </a>
-      </li>
-      <li class="archive-item">
-        <a href="archive/2026-06-20.html">
-          <span class="archive-date">2026年06月20日 · 周六</span>
-          <span class="archive-arrow">→</span>
-        </a>
-      </li>
-    </ul>
-
-    <a class="back-link" href="index.html">← 返回今日简报</a>
-
+  <div class="header">
+    <div class="label">Daily Digest · 每日简报</div>
+    <h1>📂 往期简报存档</h1>
+    <p>按日期倒序排列，点击查看当日内容</p>
   </div>
+
+  <ul class="archive-list">
+    <li><a href="archive/2026-06-25.html"><span class="archive-date">2026年06月25日 · 周四</span><span class="archive-arrow">→</span></a></li>
+    <li><a href="archive/2026-06-24.html"><span class="archive-date">2026年06月24日 · 周三</span><span class="archive-arrow">→</span></a></li>
+    <li><a href="archive/2026-06-23.html"><span class="archive-date">2026年06月23日 · 周二</span><span class="archive-arrow">→</span></a></li>
+    <li><a href="archive/2026-06-22.html"><span class="archive-date">2026年06月22日 · 周一</span><span class="archive-arrow">→</span></a></li>
+    <li><a href="archive/2026-06-21.html"><span class="archive-date">2026年06月21日 · 周日</span><span class="archive-arrow">→</span></a></li>
+    <li><a href="archive/2026-06-20.html"><span class="archive-date">2026年06月20日 · 周六</span><span class="archive-arrow">→</span></a></li>
+  </ul>
+
+  <div style="text-align:center">
+    <a href="index.html" class="back-home">← 返回今日简报</a>
+  </div>
+
+  <div class="footer">
+    <p>每日简报 · 自动生成</p>
+  </div>
+
+</div>
 </body>
 </html>

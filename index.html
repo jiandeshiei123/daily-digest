@@ -1,359 +1,337 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>每日简报 · 2026年06月24日</title>
-  <style>
-    :root {
-      --bg: #f8f7f4;
-      --surface: #ffffff;
-      --border: #e8e5df;
-      --primary: #2c5282;
-      --accent: #3182ce;
-      --text: #2d3748;
-      --text-light: #718096;
-      --insight-bg: #ebf4ff;
-      --insight-border: #4299e1;
-      --tech-color: #6b46c1;
-      --politics-color: #276749;
-      --economy-color: #c05621;
-      --science-color: #2c7a7b;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日简报 · 2026年06月25日</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+    background: #f5f4f0;
+    color: #2d2d2d;
+    line-height: 1.75;
+    font-size: 16px;
+  }
 
-    body {
-      font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.75;
-      font-size: 16px;
-    }
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+  }
 
-    .container {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 0 20px 64px;
-    }
+  /* ── Header ── */
+  .header {
+    text-align: center;
+    padding: 36px 0 28px;
+    border-bottom: 2px solid #e0ddd5;
+    margin-bottom: 32px;
+  }
+  .header .label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: 0.5px;
+  }
+  .header .date-line {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #666;
+  }
 
-    /* Header */
-    .header {
-      padding: 52px 0 36px;
-      border-bottom: 2px solid var(--border);
-      margin-bottom: 44px;
-    }
+  /* ── Lead ── */
+  .lead {
+    background: #fff8e8;
+    border-left: 4px solid #f0b429;
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin-bottom: 36px;
+    font-size: 15px;
+    color: #3d3000;
+    line-height: 1.8;
+  }
+  .lead strong { color: #b07800; }
 
-    .date-label {
-      font-size: 12px;
-      color: var(--text-light);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
+  /* ── Section ── */
+  .section {
+    margin-bottom: 40px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0ddd5;
+  }
+  .section-icon { font-size: 22px; }
+  .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #555;
+    text-transform: uppercase;
+  }
 
-    .site-title {
-      font-size: 30px;
-      font-weight: 900;
-      color: var(--primary);
-      letter-spacing: -0.6px;
-      margin-bottom: 4px;
-    }
+  /* ── News Card ── */
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+    border: 1px solid #ebe9e2;
+  }
+  .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .card-facts {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 12px;
+    line-height: 1.7;
+  }
+  .card-insight {
+    background: #f0f7ff;
+    border-left: 3px solid #4a90d9;
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #1d3557;
+    line-height: 1.8;
+  }
+  .card-insight::before {
+    content: "💡 解读 · ";
+    font-weight: 700;
+    color: #4a90d9;
+  }
+  .card-source {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #999;
+  }
+  .card-source a {
+    color: #4a90d9;
+    text-decoration: none;
+  }
+  .card-source a:hover { text-decoration: underline; }
 
-    .date-full {
-      font-size: 17px;
-      color: var(--text-light);
-      margin-bottom: 28px;
-    }
+  /* ── Book ── */
+  .book-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 22px 24px;
+    border: 1px solid #ebe9e2;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+  }
+  .book-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+  .book-author {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 14px;
+  }
+  .book-reason {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.8;
+  }
 
-    .lead {
-      font-size: 16.5px;
-      line-height: 1.85;
-      color: #344563;
-      background: var(--surface);
-      border-left: 4px solid var(--accent);
-      padding: 16px 20px;
-      border-radius: 0 10px 10px 0;
-      font-style: italic;
-    }
+  /* ── Sources ── */
+  .sources {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e0ddd5;
+  }
+  .sources h3 {
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .sources ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .sources li { font-size: 13px; }
+  .sources a {
+    color: #4a90d9;
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .sources a:hover { text-decoration: underline; }
 
-    /* Section */
-    .section { margin-bottom: 40px; }
+  /* ── Footer ── */
+  .footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px dashed #d5d2c8;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+  }
+  .footer a {
+    color: #4a90d9;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .footer a:hover { text-decoration: underline; }
 
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-
-    .section-emoji { font-size: 21px; }
-
-    .section-title {
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .section-title.tech     { color: var(--tech-color); }
-    .section-title.politics { color: var(--politics-color); }
-    .section-title.economy  { color: var(--economy-color); }
-    .section-title.science  { color: var(--science-color); }
-
-    .section-line { flex: 1; height: 1px; background: var(--border); }
-
-    /* News Card */
-    .news-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 26px;
-      margin-bottom: 16px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-    }
-
-    .news-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 10px;
-      line-height: 1.45;
-    }
-
-    .news-facts {
-      font-size: 14.5px;
-      color: var(--text-light);
-      margin-bottom: 14px;
-      line-height: 1.75;
-    }
-
-    .insight {
-      background: var(--insight-bg);
-      border-left: 3px solid var(--insight-border);
-      padding: 13px 16px;
-      border-radius: 0 10px 10px 0;
-      font-size: 14.5px;
-      line-height: 1.8;
-      color: #2a4a6b;
-    }
-
-    .insight-label {
-      font-weight: 700;
-      color: var(--accent);
-      margin-right: 4px;
-    }
-
-    .source-link {
-      display: inline-block;
-      margin-top: 14px;
-      font-size: 12px;
-      color: var(--text-light);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-
-    .source-link:hover { color: var(--accent); }
-
-    /* Book */
-    .book-section {
-      background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
-      border-radius: 18px;
-      padding: 32px 30px;
-      margin: 44px 0 0;
-      color: white;
-      box-shadow: 0 4px 20px rgba(90,103,216,0.25);
-    }
-
-    .book-header {
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      opacity: 0.8;
-      margin-bottom: 14px;
-    }
-
-    .book-title {
-      font-size: 23px;
-      font-weight: 900;
-      margin-bottom: 4px;
-      line-height: 1.3;
-    }
-
-    .book-author {
-      font-size: 13.5px;
-      opacity: 0.75;
-      margin-bottom: 18px;
-    }
-
-    .book-desc {
-      font-size: 14.5px;
-      line-height: 1.85;
-      opacity: 0.95;
-    }
-
-    /* Sources */
-    .sources-section {
-      margin-top: 44px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-    }
-
-    .sources-title {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--text-light);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 14px;
-    }
-
-    .sources-list { list-style: none; }
-    .sources-list li { margin-bottom: 7px; }
-
-    .sources-list a {
-      font-size: 13px;
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .sources-list a:hover { text-decoration: underline; }
-
-    /* Archive link */
-    .archive-link {
-      display: block;
-      text-align: center;
-      margin-top: 36px;
-      padding: 15px;
-      border: 2px dashed var(--border);
-      border-radius: 12px;
-      color: var(--text-light);
-      text-decoration: none;
-      font-size: 14px;
-      transition: all 0.2s;
-    }
-
-    .archive-link:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: #f0f7ff;
-    }
-
-    @media (max-width: 480px) {
-      .site-title  { font-size: 24px; }
-      .news-title  { font-size: 16.5px; }
-      .news-card   { padding: 20px; }
-      .book-section { padding: 24px 22px; }
-    }
-  </style>
+  @media (max-width: 480px) {
+    .header h1 { font-size: 21px; }
+    .card-title { font-size: 16px; }
+    .container { padding: 16px 12px 40px; }
+  }
+</style>
 </head>
 <body>
-  <div class="container">
+<div class="container">
 
-    <header class="header">
-      <div class="date-label">Daily Digest · 每日简报</div>
-      <h1 class="site-title">每日简报</h1>
-      <div class="date-full">2026年06月24日 · 周三</div>
-      <p class="lead">今日世界兼有科技跃进与政治洗牌——AI 已不满足于被动等待，开始主动接管你的工作日历；英国政坛七年将迎第七任首相；全球经济增速跌至疫情以来最低；而宇宙深处传来一声沉默的回响，提醒我们那个最古老的问题仍悬而未决。</p>
-    </header>
-
-    <!-- 科技 -->
-    <section class="section">
-      <div class="section-header">
-        <span class="section-emoji">🤖</span>
-        <span class="section-title tech">科技</span>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="news-card">
-        <h2 class="news-title">微软发布 Scout：永不下线的 AI 同事</h2>
-        <p class="news-facts">微软在 Build 2026 大会推出 Scout——一款基于 OpenClaw 框架的"永远在线" AI 代理。它持续扫描用户的邮件、文件、日历与会议记录，在你开口之前就完成起草、调度、研究等多步骤任务，目前向企业前沿客户开放私测。</p>
-        <div class="insight"><span class="insight-label">💡 解读</span>这不只是更聪明的助手，而是 AI 从"被动工具"变成"主动同事"的分水岭。当 AI 开始 24 小时读取你的全部工作内容并提前行动，效率是真的，但边界感与隐私的焦虑也是真的。对打工人而言，这既是解放，也可能是新的依赖——你的注意力和判断权会越来越多地外包出去。</div>
-        <a class="source-link" href="https://windowsnews.ai/article/microsoft-unveils-scout-at-build-2026-an-always-on-ai-agent-for-microsoft-365-with-built-in-governan.422415" target="_blank">↗ Windows News</a>
-      </div>
-
-      <div class="news-card">
-        <h2 class="news-title">白宫 AI 新令：松绑创新，拥抱"自愿安全"</h2>
-        <p class="news-facts">特朗普签署第 14409 号 AI 行政令，要求 AI 企业在发布前自愿向政府提前 30 天提交模型审查，同时建立 AI 网络安全信息共享机制，并明确禁止强制许可或前置审批制度。</p>
-        <div class="insight"><span class="insight-label">💡 解读</span>"自愿"两字是这份令的灵魂。政府想要安全，又不敢管死，只能靠企业配合——这是美国监管的一贯逻辑：宁可妥协，也要保住竞争优势。在 AI 全球赛跑中，这种软性约束或许是两害取其轻的现实选择，但"自愿审查"的实际效力几何，仍是个大问号。</div>
-        <a class="source-link" href="https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/" target="_blank">↗ The White House</a>
-      </div>
-    </section>
-
-    <!-- 政治 / 国际 -->
-    <section class="section">
-      <div class="section-header">
-        <span class="section-emoji">🌍</span>
-        <span class="section-title politics">政治 / 国际</span>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="news-card">
-        <h2 class="news-title">斯塔默辞职，英国七年将迎第七任首相</h2>
-        <p class="news-facts">英国首相基尔·斯塔默于 6 月 22 日宣布辞职，导火索是安迪·伯纳姆在梅克菲尔德补选中大胜，形成无可回避的"逼宫"态势。斯塔默将留任至工党完成领导人选举，伯纳姆已宣布参选，预计 9 月议会复会前接任。</p>
-        <div class="insight"><span class="insight-label">💡 解读</span>英国已成首相消耗品的代名词——后脱欧时代十年内七位首相，每一个都在选民期待与现实落差之间耗尽政治资本。斯塔默执政不足两年即黯然出局，根因不只在他本人，而是英国政治版图日益碎片化：大党失去凝聚力，选民不断出走。伯纳姆能否带来新气象，还是只是走马灯上的下一张面孔，值得持续观察。</div>
-        <a class="source-link" href="https://www.cnn.com/2026/06/22/world/live-news/keir-starmer-uk-pm" target="_blank">↗ CNN</a>
-      </div>
-    </section>
-
-    <!-- 经济 / 财经 -->
-    <section class="section">
-      <div class="section-header">
-        <span class="section-emoji">💰</span>
-        <span class="section-title economy">经济 / 财经</span>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="news-card">
-        <h2 class="news-title">世界银行警告：2026 全球增速仅 2.5%，疫情以来最低</h2>
-        <p class="news-facts">世界银行最新《全球经济展望》将 2026 年全球增速下调至 2.5%，创新冠疫情以来最低水平。中东冲突推动油价飙升、通胀压力重燃，货币紧缩预期升温。若霍尔木兹海峡持续封锁，油价或突破每桶 115 美元，全球增速可能进一步跌至 1.3%。</p>
-        <div class="insight"><span class="insight-label">💡 解读</span>2.5% 的数字不算崩溃，但背后是能源、地缘、债务三重挤压同时发力的"多事之秋"。对普通人而言，这意味着物价压力难以根本缓解，消费与就业双双承压。更值得警惕的是"1.3% 尾部风险"——一旦霍尔木兹局势失控，全球经济将面临二次冲击，而这不再只是"可能性"，而是越来越近的现实情景。</div>
-        <a class="source-link" href="https://www.worldbank.org/en/publication/global-economic-prospects" target="_blank">↗ World Bank</a>
-      </div>
-    </section>
-
-    <!-- 科学 / 人文 -->
-    <section class="section">
-      <div class="section-header">
-        <span class="section-emoji">🔭</span>
-        <span class="section-title science">科学 / 人文</span>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="news-card">
-        <h2 class="news-title">宇宙发来沉默：SETI 扫描星际天体 3I/ATLAS，一无所获</h2>
-        <p class="news-facts">SETI 研究所使用艾伦望远镜阵列对第三颗已知星际访客 3I/ATLAS 进行超过 7 小时、1–9 GHz 全频段射电扫描，筛查约 7400 万个窄带信号，最终未发现任何外星技术特征，约 200 个候选信号均溯源至地球人造设施。</p>
-        <div class="insight"><span class="insight-label">💡 解读</span>没有发现，有时比发现更令人着迷。3I/ATLAS 是继"奥陌陌"和 Borisov 之后第三颗闯入太阳系的星际天体，每一个都像宇宙随手寄来的"漂流瓶"。扫描 7400 万个信号，一切归零——这不是失败，而是人类在用前所未有的工具和勇气叩问最古老的问题：我们是否孤独？宇宙的沉默，本身就是答案的一部分。</div>
-        <a class="source-link" href="https://www.seti.org/news/seti-institute-looks-for-signs-of-technology-in-interstellar-visitor-3iatlas/" target="_blank">↗ SETI Institute</a>
-      </div>
-    </section>
-
-    <!-- 今日书籍推荐 -->
-    <div class="book-section">
-      <div class="book-header">📚 今日书籍推荐</div>
-      <div class="book-title">《智人之上》</div>
-      <div class="book-author">Nexus: A Brief History of Information Networks from the Stone Age to AI &nbsp;·&nbsp; 尤瓦尔·赫拉利 著</div>
-      <p class="book-desc">当 AI 正主动接管我们的工作与决策，赫拉利这本书恰好提供了最长焦的镜头：从石器时代的语言网络到印刷术、官僚体系，再到今天的算法，信息网络始终在塑造权力与社会的边界。他的核心追问是：AI 不只是工具，而是一种全新的"信息代理人"——它不理解世界，却能高效运作并影响人类决策。今天读来，格外应景。</p>
-    </div>
-
-    <!-- 来源 -->
-    <div class="sources-section">
-      <div class="sources-title">📎 参考来源</div>
-      <ul class="sources-list">
-        <li><a href="https://windowsnews.ai/article/microsoft-unveils-scout-at-build-2026-an-always-on-ai-agent-for-microsoft-365-with-built-in-governan.422415" target="_blank">Windows News — Microsoft Scout at Build 2026</a></li>
-        <li><a href="https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/" target="_blank">The White House — AI Innovation &amp; Security Executive Order</a></li>
-        <li><a href="https://www.cnn.com/2026/06/22/world/live-news/keir-starmer-uk-pm" target="_blank">CNN — Keir Starmer Resignation, June 22, 2026</a></li>
-        <li><a href="https://www.aljazeera.com/news/2026/6/21/pressure-mounts-on-starmer-to-quit-after-burnhams-by-election-win" target="_blank">Al Jazeera — Andy Burnham by-election win</a></li>
-        <li><a href="https://www.worldbank.org/en/publication/global-economic-prospects" target="_blank">World Bank — Global Economic Prospects June 2026</a></li>
-        <li><a href="https://www.seti.org/news/seti-institute-looks-for-signs-of-technology-in-interstellar-visitor-3iatlas/" target="_blank">SETI Institute — 3I/ATLAS Radio Scan Results</a></li>
-        <li><a href="https://phys.org/news/2026-06-interstellar-3iatlas-reveals-technosignatures-hour.html" target="_blank">Phys.org — 3I/ATLAS technosignature search</a></li>
-      </ul>
-    </div>
-
-    <a class="archive-link" href="archive.html">📂 查看往期简报</a>
-
+  <!-- Header -->
+  <div class="header">
+    <div class="label">Daily Digest · 每日简报</div>
+    <h1>2026年06月25日 · 周四</h1>
+    <div class="date-line">今日关键词：AI立法 · 美伊核谈 · 美联储鹰派 · 量子太空</div>
   </div>
+
+  <!-- Lead -->
+  <div class="lead">
+    <strong>今日导语：</strong>美国国会祭出史上最全面的联邦AI法草案，意图用一张联邦牌照统一碎片化的州级监管；大洋另一端，美伊60天核谈倒计时正式启动，中东局势迎来脆弱喘息；新美联储主席沃什首秀鹰派，九位官员预警年内加息，华尔街已经坐不住了；而在距地面400公里的太空，NASA的量子实验室刚刚完成终极升级，在微重力里造出有史以来最大的"第五态物质"。
+  </div>
+
+  <!-- 科技 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🤖</span>
+      <span class="section-title">科技 · AI &amp; 科技</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">美国首部综合联邦AI法草案出炉，269页文本冻结州级AI监管三年</div>
+      <div class="card-facts">
+        6月4日，众议员杰伊·奥伯诺尔特（共和党）与洛里·特拉汉（民主党）联合发布《大美国人工智能法》269页讨论草案。法案核心条款：三年内禁止各州专门立法规制AI模型<em>开发</em>过程，同时在联邦层面首次建立前沿AI安全审查机制，并将AI安全研究所（CAISI）正式纳入法定机构。法案同时要求大型前沿AI公司向联邦机构开放模型审查。
+      </div>
+      <div class="card-insight">
+        这是硅谷与国会之间一次典型的"政治交换"：科技公司用接受联邦统一审查换来监管确定性——50个州各立一套规则的噩梦暂时消失。三年窗口期里，谁能主导联邦标准的制定，实际上就在为未来十年的AI治理版图画线。对普通用户短期感知不大，但这张法案将决定你手机里的AI应用究竟要向谁负责。
+      </div>
+      <div class="card-source">来源：<a href="https://rollcall.com/2026/06/04/bipartisan-ai-draft-proposes-three-year-preemption-of-state-laws/" target="_blank" rel="noopener">Roll Call</a> · <a href="https://www.techpolicy.press/unpacking-the-great-american-artificial-intelligence-act-of-2026/" target="_blank" rel="noopener">TechPolicy.Press</a></div>
+    </div>
+  </div>
+
+  <!-- 政治/国际 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🌍</span>
+      <span class="section-title">政治 · 国际</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">美伊在瑞士达成60天核谈"路线图"，中东局势出现喘息窗口</div>
+      <div class="card-facts">
+        6月21日，美国与伊朗谈判代表在瑞士伯根施托克度假村谈判后宣布，双方同意一份"路线图"，计划在60天内就核问题、制裁解除以及黎巴嫩军事安排达成最终协议。双方设立核问题、制裁和监督争端解决三个工作组，高级委员会定期接收汇报。此路线图基于6月15日签署的备忘录框架之上进一步推进。
+      </div>
+      <div class="card-insight">
+        "路线图"好比婚前协议——意愿明确，细节全是雷区。60天倒计时里，伊朗浓缩铀存量如何处置、制裁解除的节奏与核查机制，每一项都够谈崩。油价已绷紧神经：特朗普任何一次表态都能让布伦特原油波动2%以上。这个窗口的真正价值，也许不在于最终文本，而在于让市场维持一段相对平静的定价预期——全球通胀因此能稍喘口气。
+      </div>
+      <div class="card-source">来源：<a href="https://www.cnbc.com/2026/06/22/us-iran-roadmap-final-deal-switzerland-talks-lebanon-deconfliction.html" target="_blank" rel="noopener">CNBC</a> · <a href="https://www.npr.org/2026/06/21/g-s1-129222/us-iran-deal-lebanon-israel-strait-hormuz-jd-vance" target="_blank" rel="noopener">NPR</a></div>
+    </div>
+  </div>
+
+  <!-- 经济/财经 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">📈</span>
+      <span class="section-title">经济 · 财经</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">新美联储主席沃什首秀鹰派，九位官员预警年内加息，两年期美债收益率单日跳涨16基点</div>
+      <div class="card-facts">
+        6月17日，美联储新任主席凯文·沃什主持首次议息会议，维持基准利率3.5%–3.75%不变，但"点阵图"显示9位官员预计年内需要加息，仅1人预计降息。会后两年期美债收益率单日跳升16个基点至4.21%，创逾一年新高。背景：自今年2月伊朗战争爆发以来，油价推升通胀至4.2%三年高位，市场最快预期10月加息。
+      </div>
+      <div class="card-insight">
+        沃什是货币鹰派圈子里的"老面孔"——他在2008年金融危机期间曾批评量化宽松的副作用。如今通胀反弹给了他正当理由。最快10月可能加息，意味着房贷利率还将走高，企业融资成本上升。对于因AI热潮抬高估值的科技股，加息预期是一盆冷水：折现率上升后，靠"未来利润"讲故事的高估值公司首当其冲。普通人感受最直接的是信用卡利率和浮动房贷——这场通胀的账，最终还是消费者来付。
+      </div>
+      <div class="card-source">来源：<a href="https://www.cnbc.com/2026/06/17/fed-interest-rate-decision-june-2026.html" target="_blank" rel="noopener">CNBC</a> · <a href="https://finance.yahoo.com/economy/policy/articles/warsh-hawkish-shock-9-fed-180221394.html" target="_blank" rel="noopener">Yahoo Finance</a></div>
+    </div>
+  </div>
+
+  <!-- 科学/人文 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🔬</span>
+      <span class="section-title">科学 · 人文</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">NASA"冷原子实验室"完成终极升级：太空中造出史上最大玻色—爱因斯坦凝聚体</div>
+      <div class="card-facts">
+        6月16日，国际空间站上的NASA冷原子实验室（CAL）在完成最终硬件升级后重新开机。新模块由航天员杰西卡·迈尔于5月完成安装，令实验室产生的玻色—爱因斯坦凝聚体（BEC，物质第五态）体积比此前大5倍，观测窗口大幅延长。此次升级是CAL在国际空间站退役前（预计约2030年）的最后一次硬件改造。
+      </div>
+      <div class="card-insight">
+        玻色—爱因斯坦凝聚体是量子力学最迷人的"奇点"：原子冷却到接近绝对零度时，失去各自"个性"，集体表现为一个巨大量子波。地球上重力在毫秒内就让这种脆弱状态坍缩，太空微重力让观测时间延长数十倍。这不是明天就有应用的技术，但它是量子传感、精密导航、引力波探测的基石——就像60年前的半导体实验室，那时没人知道最终会造出智能手机。
+      </div>
+      <div class="card-source">来源：<a href="https://www.techtimes.com/articles/318963/20260623/nasa-cold-atom-lab-restarts-after-final-upgrade-quantum-objects-now-five-times-larger.htm" target="_blank" rel="noopener">TechTimes</a> · <a href="https://www.sciencedaily.com/releases/2026/06/260622091507.htm" target="_blank" rel="noopener">ScienceDaily</a></div>
+    </div>
+  </div>
+
+  <!-- 书籍推荐 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">📚</span>
+      <span class="section-title">今日书籍推荐</span>
+    </div>
+
+    <div class="book-card">
+      <div class="book-title">《政治秩序与政治衰败》</div>
+      <div class="book-author">弗朗西斯·福山（Francis Fukuyama）著 · 2014年</div>
+      <div class="book-reason">
+        今天两则新闻——美国AI立法的两党博弈与美伊60天核谈——都指向同一个根本问题：<strong>制度能否在压力下完成自我更新？</strong>福山横跨200年历史，解剖国家能力、法治与民主问责制的生死循环，分析为何有些国家能在危机中进化，有些却走向"政治衰败"。读完之后，再看国会的AI法案草稿和伊核谈判桌，你会有一套完全不同的分析框架——不再只看"谁赢了"，而是看"这套制度还能撑多久"。
+      </div>
+    </div>
+  </div>
+
+  <!-- Sources -->
+  <div class="sources">
+    <h3>📎 参考来源</h3>
+    <ul>
+      <li><a href="https://rollcall.com/2026/06/04/bipartisan-ai-draft-proposes-three-year-preemption-of-state-laws/" target="_blank" rel="noopener">Roll Call — Bipartisan AI draft proposes three-year preemption of state laws</a></li>
+      <li><a href="https://www.techpolicy.press/unpacking-the-great-american-artificial-intelligence-act-of-2026/" target="_blank" rel="noopener">TechPolicy.Press — Unpacking the Great American Artificial Intelligence Act of 2026</a></li>
+      <li><a href="https://www.dlapiper.com/en-us/insights/publications/2026/06/unpacking-the-great-american-ai-act" target="_blank" rel="noopener">DLA Piper — Unpacking the Great American AI Act</a></li>
+      <li><a href="https://www.cnbc.com/2026/06/22/us-iran-roadmap-final-deal-switzerland-talks-lebanon-deconfliction.html" target="_blank" rel="noopener">CNBC — U.S., Iran agree on roadmap for final deal within 60 days</a></li>
+      <li><a href="https://www.npr.org/2026/06/21/g-s1-129222/us-iran-deal-lebanon-israel-strait-hormuz-jd-vance" target="_blank" rel="noopener">NPR — The U.S. and Iran agree to a 'road map' for a final deal</a></li>
+      <li><a href="https://www.cnbc.com/2026/06/17/fed-interest-rate-decision-june-2026.html" target="_blank" rel="noopener">CNBC — Fed interest rate decision June 2026: Fed holds rates steady</a></li>
+      <li><a href="https://finance.yahoo.com/economy/policy/articles/warsh-hawkish-shock-9-fed-180221394.html" target="_blank" rel="noopener">Yahoo Finance — Warsh Hawkish Shock: 9 Fed Officials Signal 2026 Rate Hike</a></li>
+      <li><a href="https://www.techtimes.com/articles/318963/20260623/nasa-cold-atom-lab-restarts-after-final-upgrade-quantum-objects-now-five-times-larger.htm" target="_blank" rel="noopener">TechTimes — NASA Cold Atom Lab Restarts After Final Upgrade</a></li>
+      <li><a href="https://www.sciencedaily.com/releases/2026/06/260622091507.htm" target="_blank" rel="noopener">ScienceDaily — NASA's Cold Atom Lab creating one of the weirdest forms of matter in space</a></li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>每日简报 · 自动生成 · 仅供参考</p>
+    <p style="margin-top:10px;"><a href="archive.html">📂 查看往期简报</a></p>
+  </div>
+
+</div>
 </body>
 </html>
