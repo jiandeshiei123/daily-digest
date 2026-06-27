@@ -11,8 +11,6 @@
     --bg: #f7f6f2;
     --card: #ffffff;
     --border: #e8e4dc;
-    --accent: #2d6a4f;
-    --accent-light: #f0f7f4;
     --accent2: #1a4a8a;
     --accent2-light: #eef3fb;
     --text: #1c1c1e;
@@ -170,48 +168,25 @@
     margin-top: 36px;
     box-shadow: var(--shadow);
   }
-  .book-section h2 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    color: #7c2d12;
-  }
-  .book-meta {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    margin-bottom: 14px;
-  }
+  .book-section h2 { font-size: 18px; font-weight: 700; margin-bottom: 16px; color: #7c2d12; }
+  .book-meta { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 14px; }
   .book-cover-placeholder {
-    width: 60px;
-    min-width: 60px;
-    height: 80px;
+    width: 60px; min-width: 60px; height: 80px;
     background: linear-gradient(135deg, #7c3aed, #c026d3);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 26px;
-    box-shadow: 2px 3px 8px rgba(0,0,0,0.15);
+    border-radius: 6px; display: flex; align-items: center; justify-content: center;
+    font-size: 26px; box-shadow: 2px 3px 8px rgba(0,0,0,0.15);
   }
   .book-info .title  { font-size: 16px; font-weight: 700; color: #1c1c1e; margin-bottom: 4px; }
   .book-info .author { font-size: 13.5px; color: var(--text-muted); }
   .book-reason { font-size: 14.5px; line-height: 1.65; color: #44403c; }
 
   .sources-section {
-    margin-top: 36px;
-    padding: 20px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
+    margin-top: 36px; padding: 20px;
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
   }
   .sources-section h3 {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 12px;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px;
   }
   .sources-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
   .sources-list li { font-size: 13px; }
@@ -219,28 +194,16 @@
   .sources-list a:hover { text-decoration: underline; }
 
   .archive-link {
-    display: block;
-    text-align: center;
-    margin-top: 28px;
-    padding: 14px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    font-size: 14.5px;
-    color: var(--accent2);
-    text-decoration: none;
-    font-weight: 500;
+    display: block; text-align: center; margin-top: 28px; padding: 14px;
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    font-size: 14.5px; color: var(--accent2); text-decoration: none; font-weight: 500;
     transition: background 0.15s;
   }
   .archive-link:hover { background: var(--accent2-light); }
 
   .site-footer {
-    text-align: center;
-    font-size: 12.5px;
-    color: var(--text-light);
-    margin-top: 36px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border);
+    text-align: center; font-size: 12.5px; color: var(--text-light);
+    margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--border);
   }
 
   @media (max-width: 480px) {
@@ -410,7 +373,7 @@
   </div>
 
   <!-- 往期归档 -->
-  <a class="archive-link" href="archive.html">📂 查看往期简报</a>
+  <a class="archive-link" href="../archive.html">📂 查看往期简报</a>
 
   <div class="site-footer">
     <p>Daily Digest · 每日自动生成 · 内容来源于公开新闻网站</p>
