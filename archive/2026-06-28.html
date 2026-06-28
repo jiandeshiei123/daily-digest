@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日简报 · 2026年06月28日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: #f8f7f4;
+            color: #2d2d2d;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 20px 64px;
+        }
+
+        header {
+            padding: 44px 0 32px;
+            border-bottom: 2px solid #e8e4de;
+            margin-bottom: 40px;
+        }
+
+        .date-badge {
+            display: inline-block;
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: #8a7560;
+            text-transform: uppercase;
+            background: #f0ebe3;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #1a1a1a;
+            line-height: 1.3;
+            margin-bottom: 18px;
+            letter-spacing: -0.02em;
+        }
+
+        .intro {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.8;
+            font-style: italic;
+            padding: 14px 16px;
+            border-left: 3px solid #c8b99a;
+            background: #faf8f5;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .section { margin-bottom: 48px; }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .section-emoji { font-size: 20px; }
+
+        .section-title {
+            font-size: 11.5px;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            color: #8a7560;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, #e0dbd2, transparent);
+        }
+
+        .news-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 22px 24px;
+            margin-bottom: 14px;
+            border: 1px solid #eae6df;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .news-card:last-child { margin-bottom: 0; }
+
+        .news-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            line-height: 1.45;
+            letter-spacing: -0.01em;
+        }
+
+        .news-fact {
+            font-size: 14.5px;
+            color: #4a4a4a;
+            margin-bottom: 14px;
+            line-height: 1.75;
+        }
+
+        .analysis-block {
+            background: #f5f1eb;
+            border-left: 3px solid #c8b99a;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 14px;
+            color: #4a3e30;
+            line-height: 1.8;
+        }
+
+        .analysis-label {
+            display: block;
+            font-size: 10.5px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            color: #9a8a72;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .news-source {
+            margin-top: 14px;
+            font-size: 12px;
+        }
+
+        .news-source a {
+            color: #a09080;
+            text-decoration: none;
+            border-bottom: 1px dotted #c8b99a;
+            margin-right: 8px;
+        }
+
+        .news-source a:hover { color: #6a5a40; }
+
+        .book-section {
+            background: #fff;
+            border: 1px solid #eae6df;
+            border-radius: 12px;
+            padding: 26px 24px;
+            margin-bottom: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #c8b99a, #e8d4b5, #c8b99a);
+        }
+
+        .book-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .book-tag {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            color: #8a7560;
+            text-transform: uppercase;
+        }
+
+        .book-title {
+            font-size: 19px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+            letter-spacing: -0.01em;
+        }
+
+        .book-author {
+            font-size: 13px;
+            color: #9a8a72;
+            margin-bottom: 14px;
+        }
+
+        .book-review {
+            font-size: 14.5px;
+            color: #4a4a4a;
+            line-height: 1.8;
+        }
+
+        .archive-link {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .archive-link a {
+            display: inline-block;
+            padding: 11px 28px;
+            background: #f5f2ec;
+            color: #6a5a40;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid #e0dbd2;
+            letter-spacing: 0.02em;
+        }
+
+        .archive-link a:hover { background: #ede8df; }
+
+        .sources-section {
+            border-top: 1px solid #e4e0d8;
+            padding-top: 24px;
+            margin-top: 8px;
+        }
+
+        .sources-title {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            color: #b0a898;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .sources-list { list-style: none; }
+
+        .sources-list li {
+            font-size: 12px;
+            color: #b0a898;
+            margin-bottom: 6px;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .sources-list li::before { content: '·'; position: absolute; left: 0; }
+
+        .sources-list a {
+            color: #b0a898;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .sources-list a:hover { color: #6a5a40; text-decoration: underline; }
+
+        footer {
+            margin-top: 48px;
+            text-align: center;
+            font-size: 12px;
+            color: #c0b8ae;
+            padding-bottom: 20px;
+        }
+
+        @media (max-width: 480px) {
+            body { font-size: 15px; }
+            h1 { font-size: 24px; }
+            .news-title { font-size: 16px; }
+            .container { padding: 0 16px 48px; }
+            header { padding: 28px 0 24px; }
+            .news-card { padding: 18px 18px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <header>
+        <div class="date-badge">2026年06月28日 &nbsp;·&nbsp; 周日</div>
+        <h1>每日时事简报</h1>
+        <p class="intro">当 AI 巨头开始自己造芯片，当"知识窃取"争端引爆科技冷战，当委内瑞拉双震废墟下仍有生命等待救援——今日这个世界，正以让人来不及反应的速度，完成一场又一场的重塑。</p>
+    </header>
+
+    <!-- 科技 -->
+    <section class="section">
+        <div class="section-header">
+            <span class="section-emoji">🤖</span>
+            <span class="section-title">科技</span>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="news-card">
+            <div class="news-title">OpenAI 自研首颗 AI 芯片「Jalapeño」亮相：9 个月，挑战英伟达</div>
+            <div class="news-fact">6 月 24 日，OpenAI 与博通（Broadcom）联合发布 OpenAI 首款自研 AI 推理芯片 Jalapeño——从设计到流片历时仅 9 个月，专为大型语言模型推理定制，初步测试显示推理能效"显著优于"现有英伟达方案，成本有望降低约 50%。2026 年底开始大规模部署。</div>
+            <div class="analysis-block">
+                <span class="analysis-label">解读</span>
+                造芯片，意味着 OpenAI 正在从"买 GPU 的人"变成"自己决定算力的人"。这不只是省钱——它是对英伟达定价权的釜底抽薪。如果 Jalapeño 性能如其所言，整个 AI 产业的算力供应格局可能迎来真正的震动：苹果自研 M 芯片颠覆笔记本电脑的故事，或许正在 AI 数据中心重演一遍。
+            </div>
+            <div class="news-source">
+                来源：
+                <a href="https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/" target="_blank">TechCrunch</a>
+                <a href="https://www.cnbc.com/2026/06/24/openai-and-broadcom-reveal-jalapeno-first-ai-chip-in-partnership.html" target="_blank">CNBC</a>
+                <a href="https://openai.com/index/openai-broadcom-jalapeno-inference-chip/" target="_blank">OpenAI 官方</a>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <div class="news-title">Anthropic 指控阿里巴巴：史上最大规模 AI「蒸馏窃取」攻击</div>
+            <div class="news-fact">Anthropic 公开指控，与阿里巴巴旗下通义（Qwen）实验室关联的操作者，通过约 2.5 万个欺诈账号，在 2026 年 4 月至 6 月间与 Claude 模型进行 2880 万次交互，以非法"蒸馏"方式提取模型能力用于训练自家 AI，并已致信白宫请求政府介入。</div>
+            <div class="analysis-block">
+                <span class="analysis-label">解读</span>
+                "蒸馏攻击"是用强大模型的输出来训练弱模型，以此绕过正常研发成本——这次规模之大史无前例。本质上，这是 AI 知识产权在缺乏明确法律框架下的正面冲突。Anthropic 今年已三次点名中国 AI 公司（DeepSeek、Moonshot、MiniMax），这次更直接上升至政府层面：AI"技术主权"之争，已成为中美科技摩擦最新、最热的战线。
+            </div>
+            <div class="news-source">
+                来源：
+                <a href="https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html" target="_blank">CNBC</a>
+                <a href="https://asia.nikkei.com/business/technology/artificial-intelligence/anthropic-accuses-alibaba-of-largest-known-distillation-attack-on-claude" target="_blank">Nikkei Asia</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 政治/国际 -->
+    <section class="section">
+        <div class="section-header">
+            <span class="section-emoji">🌍</span>
+            <span class="section-title">政治 / 国际</span>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="news-card">
+            <div class="news-title">委内瑞拉双震：死亡逾 1400 人，5 万人下落不明</div>
+            <div class="news-fact">6 月 24 日，委内瑞拉遭连续两场强震袭击（7.2 级与 7.5 级），为该国百年来最强地震，波及首都加拉加斯及拉瓜伊拉。截至 6 月 27 日，官方确认死亡逾 1430 人，3200 余人受伤，超 5 万人下落不明，3100 余户家庭失去住所。已有 21 支国际救援队、逾 2000 名援助人员抵达。</div>
+            <div class="analysis-block">
+                <span class="analysis-label">解读</span>
+                7.5 级地震砸在任何城市都是巨大灾难，偏偏砸在了一个本已岌岌可危的国家。马杜罗政府面临国际孤立、基础设施老化双重困境，救援设备严重匮乏，大量市民用双手从废墟中刨挖邻居。这场地震不只是天灾，也是一面照出政治失序代价的镜子——5 万失联者背后，每一个数字都是一个具体的人。
+            </div>
+            <div class="news-source">
+                来源：
+                <a href="https://www.cnn.com/2026/06/27/world/live-news/venezuela-earthquake-hnk" target="_blank">CNN</a>
+                <a href="https://www.npr.org/2026/06/26/nx-s1-5870651/venezuela-earthquakes-caracas" target="_blank">NPR</a>
+                <a href="https://www.aljazeera.com/news/2026/6/26/which-countries-have-pledged-aid-to-venezuela-after-powerful-earthquakes" target="_blank">Al Jazeera</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 经济/财经 -->
+    <section class="section">
+        <div class="section-header">
+            <span class="section-emoji">📊</span>
+            <span class="section-title">经济 / 财经</span>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="news-card">
+            <div class="news-title">世界银行：2026 年全球经济增速或降至 2.5%，疫情以来最低</div>
+            <div class="news-fact">世界银行最新《全球经济展望》报告预测，2026 年全球经济增速将从去年的 2.9% 放缓至 2.5%，为新冠疫情以来最低水平，能源价格冲击为主因。G20 经济体整体通胀率预计升至 4.0%。中国前五月固定资产投资同比下降 4.1%，创 2020 年 5 月以来最大降幅。</div>
+            <div class="analysis-block">
+                <span class="analysis-label">解读</span>
+                中东冲突打在了能源市场的七寸——油价上涨通过进口成本传导至全球每个消费国，所谓"地区冲突"就此变成了所有人餐桌和油箱的切身感受。不过值得关注的是韩国：AI 芯片出口贡献额外 0.7 个百分点的增长，是这轮寒冬里少有的亮点，再次印证半导体正在成为国家经济的核心杠杆。中国固定资产投资骤降则是另一个信号：下半年政策刺激的期待将再次升温。
+            </div>
+            <div class="news-source">
+                来源：
+                <a href="https://www.worldbank.org/en/publication/global-economic-prospects" target="_blank">世界银行</a>
+                <a href="https://www.oecd.org/en/about/news/press-releases/2026/06/global-economic-outlook-weakens-amid-energy-shock-and-rising-inflationary-pressures.html" target="_blank">OECD</a>
+                <a href="https://www.investec.com/en_gb/focus/economy/global-economic-overview-june-2026.html" target="_blank">Investec</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 科学/人文 -->
+    <section class="section">
+        <div class="section-header">
+            <span class="section-emoji">🔬</span>
+            <span class="section-title">科学 / 人文</span>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="news-card">
+            <div class="news-title">AI 辅助设计的「通用冠状病毒疫苗」完成首次人体安全测试</div>
+            <div class="news-fact">科学家首次在人体中成功测试了一款由 AI 辅助设计的广谱冠状病毒疫苗，结果显示安全、耐受性良好。该疫苗旨在对抗包括未来潜在变异株在内的多种冠状病毒，而非仅针对某一特定毒株。</div>
+            <div class="analysis-block">
+                <span class="analysis-label">解读</span>
+                用 AI 设计疫苗、把"适配未来病毒"写进开发理念——这是方法论上的一次跃迁。新冠疫情告诉我们，等病毒出现再研发疫苗代价多么高昂。如果"通用疫苗"走向临床，本质上是在为下一次大流行提前织一张防护网，而不是像以往那样亡羊补牢、被动打地鼠。
+            </div>
+            <div class="news-source">
+                来源：<a href="https://sciencedaily.com/" target="_blank">ScienceDaily</a>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <div class="news-title">告知是假药，效果依然存在——安慰剂效应研究新突破</div>
+            <div class="news-fact">一项最新研究发现，健康老年人即使被明确告知所服用的是安慰剂（假药），服用三周后仍出现记忆力提升、体能改善、压力减轻等可测量的积极变化，与"不知情服用安慰剂"组效果相当。</div>
+            <div class="analysis-block">
+                <span class="analysis-label">解读</span>
+                这个发现有点烧脑：骗局被揭穿了，但效果还在。研究表明安慰剂的力量可能不只来自"相信它会起效"，而是大脑通过重复经历真正"学会"了如何响应这个治疗信号。对医学伦理意义重大——我们或许可以在不欺骗患者的前提下合理利用安慰剂效应，尤其是在日益紧迫的老龄化照护场景中。
+            </div>
+            <div class="news-source">
+                来源：
+                <a href="https://www.nationalgeographic.com/magazine/article/why-a-placebo-can-workeven-when-you-know-its-fake" target="_blank">National Geographic</a>
+                <a href="https://lsa.umich.edu/psych/news-events/all-news/faculty-news/can-placebos-work-even-when-patients-know-they-re-fake-.html" target="_blank">University of Michigan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 书籍推荐 -->
+    <div class="book-section">
+        <div class="book-header">
+            <span style="font-size:22px">📚</span>
+            <span class="book-tag">今日书籍推荐</span>
+        </div>
+        <div class="book-title">《芯片战争》</div>
+        <div class="book-author">克里斯·米勒（Chris Miller）著</div>
+        <div class="book-review">
+            OpenAI 造出自己的芯片，Anthropic 指控阿里巴巴窃取 AI 模型能力——这些新闻背后，是一场已延续数十年的半导体地缘博弈。《芯片战争》完整梳理了芯片如何从一小块硅晶片演变为 21 世纪最重要的战略资源，以及美国、台湾、韩国、荷兰、中国如何围绕这张小小的电路板展开殊死较量。读懂芯片战争，才能真正读懂今天每一条科技新闻背后的深层逻辑。
+        </div>
+    </div>
+
+    <!-- 往期归档 -->
+    <div class="archive-link">
+        <a href="archive.html">📂 查看往期简报</a>
+    </div>
+
+    <!-- 来源 -->
+    <div class="sources-section">
+        <div class="sources-title">本期来源</div>
+        <ul class="sources-list">
+            <li><a href="https://openai.com/index/openai-broadcom-jalapeno-inference-chip/" target="_blank">OpenAI - OpenAI and Broadcom unveil LLM-optimized inference chip</a></li>
+            <li><a href="https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/" target="_blank">TechCrunch - OpenAI unveils its first custom chip, built by Broadcom</a></li>
+            <li><a href="https://www.cnbc.com/2026/06/24/openai-and-broadcom-reveal-jalapeno-first-ai-chip-in-partnership.html" target="_blank">CNBC - OpenAI and Broadcom reveal Jalapeño, first AI chip in partnership</a></li>
+            <li><a href="https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html" target="_blank">CNBC - Anthropic accuses Alibaba of campaign to illicitly extract AI capabilities</a></li>
+            <li><a href="https://asia.nikkei.com/business/technology/artificial-intelligence/anthropic-accuses-alibaba-of-largest-known-distillation-attack-on-claude" target="_blank">Nikkei Asia - Anthropic accuses Alibaba of largest known distillation attack on Claude</a></li>
+            <li><a href="https://www.cnn.com/2026/06/27/world/live-news/venezuela-earthquake-hnk" target="_blank">CNN - Venezuela earthquake live updates, death toll over 1,400</a></li>
+            <li><a href="https://www.npr.org/2026/06/26/nx-s1-5870651/venezuela-earthquakes-caracas" target="_blank">NPR - Venezuela earthquakes death toll climbs as rescue efforts continue</a></li>
+            <li><a href="https://www.aljazeera.com/news/2026/6/26/which-countries-have-pledged-aid-to-venezuela-after-powerful-earthquakes" target="_blank">Al Jazeera - Countries pledging aid to Venezuela after earthquakes</a></li>
+            <li><a href="https://www.worldbank.org/en/publication/global-economic-prospects" target="_blank">World Bank - Global Economic Prospects, June 2026</a></li>
+            <li><a href="https://www.oecd.org/en/about/news/press-releases/2026/06/global-economic-outlook-weakens-amid-energy-shock-and-rising-inflationary-pressures.html" target="_blank">OECD - Global economic outlook weakens amid energy shock</a></li>
+            <li><a href="https://www.nationalgeographic.com/magazine/article/why-a-placebo-can-workeven-when-you-know-its-fake" target="_blank">National Geographic - Why a placebo can work even when you know it's fake</a></li>
+            <li><a href="https://lsa.umich.edu/psych/news-events/all-news/faculty-news/can-placebos-work-even-when-patients-know-they-re-fake-.html" target="_blank">University of Michigan - Can Placebos Work Even When Patients Know They're Fake?</a></li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>每日时事简报 &nbsp;·&nbsp; 自动生成 &nbsp;·&nbsp; 2026年06月28日</p>
+    </footer>
+
+</div>
+</body>
+</html>
