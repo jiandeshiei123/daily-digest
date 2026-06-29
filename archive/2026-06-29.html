@@ -74,8 +74,6 @@
       border-radius: 8px;
       border-left: 3px solid var(--accent);
     }
-
-    /* Section */
     .section { margin-bottom: 40px; }
     .section-title {
       display: inline-flex;
@@ -93,8 +91,6 @@
     .section--politics .section-title { color: var(--politics-color); background: var(--politics-bg); }
     .section--economy .section-title  { color: var(--economy-color);  background: var(--economy-bg); }
     .section--science .section-title  { color: var(--science-color);  background: var(--science-bg); }
-
-    /* Card */
     .card {
       background: var(--surface);
       border-radius: 10px;
@@ -131,13 +127,10 @@
       color: var(--text-muted);
       margin-bottom: 5px;
     }
-
     .section--tech .insight     { background: var(--tech-bg);     border-left: 3px solid var(--tech-color); }
     .section--politics .insight { background: var(--politics-bg); border-left: 3px solid var(--politics-color); }
     .section--economy .insight  { background: var(--economy-bg);  border-left: 3px solid var(--economy-color); }
     .section--science .insight  { background: var(--science-bg);  border-left: 3px solid var(--science-color); }
-
-    /* Book */
     .book-section {
       background: var(--book-bg);
       border: 1px solid #fcd34d;
@@ -170,8 +163,6 @@
       line-height: 1.75;
       color: var(--text-sub);
     }
-
-    /* Sources */
     .sources {
       border-top: 1px solid var(--border);
       padding-top: 22px;
@@ -189,15 +180,15 @@
     .sources li { font-size: 13px; margin-bottom: 7px; }
     .sources a { color: var(--accent); text-decoration: none; word-break: break-all; }
     .sources a:hover { text-decoration: underline; }
-
-    /* Archive link */
-    .archive-link {
-      text-align: center;
-      padding: 4px 0 0;
+    .nav-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
     }
-    .archive-link a {
+    .nav-links a {
       display: inline-block;
-      padding: 10px 24px;
+      padding: 10px 20px;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 24px;
@@ -205,10 +196,8 @@
       font-weight: 500;
       color: var(--text-sub);
       text-decoration: none;
-      transition: background .15s;
     }
-    .archive-link a:hover { background: var(--surface2); }
-
+    .nav-links a:hover { background: var(--surface2); }
     footer {
       text-align: center;
       font-size: 12px;
@@ -216,7 +205,6 @@
       padding-top: 24px;
       margin-top: 12px;
     }
-
     @media (max-width: 480px) {
       header h1 { font-size: 24px; }
       .card h2  { font-size: 15.5px; }
@@ -229,7 +217,7 @@
 <div class="container">
 
   <header>
-    <div class="date-label">Daily Digest · 每日简报</div>
+    <div class="date-label">Daily Digest · 每日简报 · 归档</div>
     <h1>今日简报</h1>
     <div class="date-cn">2026年06月29日 &nbsp;周一</div>
     <p class="lede">苹果史上最大 Siri 重塑正式发布，中国芯片出口暴涨颠覆全球供应链，美伊协议让霍尔木兹油轮重新通行，欧几里得望远镜送来银河系心脏的最清晰肖像——今日看点，一口气看完。</p>
@@ -325,8 +313,9 @@
     </ul>
   </div>
 
-  <div class="archive-link">
-    <a href="archive.html">📂 查看往期简报</a>
+  <div class="nav-links">
+    <a href="../index.html">← 返回今日简报</a>
+    <a href="../archive.html">📂 往期简报</a>
   </div>
 
   <footer>每日简报 · Daily Digest Bot · 内容基于公开新闻来源整理</footer>
